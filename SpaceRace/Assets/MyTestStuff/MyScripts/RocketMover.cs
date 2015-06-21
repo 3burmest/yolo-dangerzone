@@ -18,6 +18,11 @@ public class RocketMover : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (target == null) {
+			Destroy(gameObject);
+			return;
+		}
+
 		Vector3 direction = target.transform.position - transform.position;
 
 
@@ -29,6 +34,7 @@ public class RocketMover : MonoBehaviour {
 
 
 		transform.position += transform.forward * speed;
-	
+
+
 	}
 }
