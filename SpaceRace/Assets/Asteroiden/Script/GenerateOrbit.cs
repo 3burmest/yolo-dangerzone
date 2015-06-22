@@ -18,13 +18,20 @@ public class GenerateOrbit : MonoBehaviour {
 	public float spread;
 
 	// Größenmultiplikator der Asteoriden
-	public float asteroidSizeFactor;
+	public float asteroidMinSizeFactor;
+
+	// Größenmultiplikator der Asteoriden
+	public float asteroidMaxSizeFactor;
 
 	// Geschwindigkeit der Asteoriden im Orbit
 	public float rotationSpeed;
 
 	// Geschwindigkeit der Rotation um die eigene Achse der Asteoriden
 	public float eigenRotGeschwindigkeit;
+
+	// Wahrscheinlichkeit für Powerups
+	[Range(0, 100)]
+	public int powerupWahrscheinlichkeit;
 
 	// Anfang und Ende von generierten Asteoriden (Performanzgründe)
 	[Range(0.0f, 360.0f)]
@@ -38,6 +45,7 @@ public class GenerateOrbit : MonoBehaviour {
 	void OnValidate()
 	{
 		endDegree = Mathf.Clamp (endDegree, beginDegree, 360.0f);
+		asteroidMinSizeFactor = Mathf.Clamp (asteroidMinSizeFactor, 0, asteroidMaxSizeFactor);
 	}
 
 	// Init
@@ -58,9 +66,9 @@ public class GenerateOrbit : MonoBehaviour {
 
 			GameObject a = (GameObject) Instantiate(o, location, Quaternion.identity);
 
-			// Größe verändern
-			a.transform.localScale = Vector3.one * asteroidSizeFactor;
-			
+			// Größe verändern (Mehr kleinere als größere Asteroiden)
+			a.transform.localScale = Vector3.one * (asteroidMinSizeFactor + (asteroidMaxSizeFactor - asteroidMinSizeFactor) * Mathf.Pow(Random.Range(0.0f, 1.0f), 3));
+
 			// Eigenrotation;
 			a.GetComponent<Rigidbody>().angularVelocity = (Random.insideUnitSphere * 1) * eigenRotGeschwindigkeit;
 			
@@ -81,6 +89,15 @@ public class GenerateOrbit : MonoBehaviour {
 			
 			// Dem Planeten unterordnen
 			a.transform.parent = transform;
+
+			//Powerups generieren
+			if(powerupWahrscheinlichkeit >= Random.Range(0, 100)){
+				a.transform.GetChild(0).gameObject.AddComponent<Powerup>();
+			}
+			else{
+//				a.AddComponent<AsteroidDestruction>();
+
+			}
 
 			generatedAstroids.Add(a);
 		}
@@ -110,8 +127,8 @@ public class GenerateOrbit : MonoBehaviour {
 			
 			GameObject a = (GameObject) Instantiate(o, location, Quaternion.identity);
 			
-			// Größe verändern
-			a.transform.localScale = Vector3.one * asteroidSizeFactor;
+			// Größe verändern (Mehr kleinere als größere Asteroiden)
+			a.transform.localScale = Vector3.one * (asteroidMinSizeFactor + (asteroidMaxSizeFactor - asteroidMinSizeFactor) * Mathf.Pow(Random.Range(0.0f, 1.0f), 3));
 			
 			// Eigenrotation;
 			a.GetComponent<Rigidbody>().angularVelocity = (Random.insideUnitSphere * 1) * eigenRotGeschwindigkeit;
@@ -133,7 +150,12 @@ public class GenerateOrbit : MonoBehaviour {
 			
 			// Dem Planeten unterordnen
 			a.transform.parent = transform;
-			
+
+			//Powerups generieren
+			if(0 == Random.Range(0, 100)){
+				a.transform.GetChild(0).gameObject.AddComponent<Powerup>();
+			}
+
 			generatedAstroids.Add(a);
 		}
 
