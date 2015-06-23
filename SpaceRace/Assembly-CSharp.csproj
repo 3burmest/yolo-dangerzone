@@ -77,6 +77,7 @@
      <Compile Include="Assets\MyTestStuff\TestFire.cs" />
      <Compile Include="Assets\MyTestStuff\WaypointHUD.cs" />
      <Compile Include="Assets\ShipControl.cs" />
+     <Compile Include="Assets\SmoothFollow.cs" />
      <Compile Include="Assets\fire.cs" />
      <Compile Include="Assets\lockMouse.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
