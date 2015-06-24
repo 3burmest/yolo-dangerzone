@@ -20,7 +20,7 @@ For every of those smoothed values we calculate the wanted value and the current
 // Place the script in the Camera-Control group in the component menu @script AddComponentMenu("Camera-Control/Smooth Follow")
 
 	void LateUpdate () { // Early out if we don't have a target if (!target) return;
-
+/*
  // Calculate the current rotation angles
  wantedRotationAngle = target.eulerAngles.y;
  wantedHeight = target.position.y + height;
@@ -46,6 +46,6 @@ For every of those smoothed values we calculate the wanted value and the current
  transform.position.y = currentHeight;
  
  // Always look at the target
- transform.LookAt (target);
-}
+ transform.LookAt (target);*/
+	}
 }
