@@ -17,6 +17,7 @@ public class ShipControl : MonoBehaviour {
 	void FixedUpdate () {
 		rb.AddRelativeTorque(-Vector3.forward * Input.GetAxis("Horizontal") * rotationSpeed);
 		rb.AddRelativeTorque(-Vector3.left * Input.GetAxis("Vertical") * rotationSpeed);
+		rb.AddRelativeTorque(-Vector3.up * Input.GetAxis("LeftRight") * rotationSpeed);
 
 		
 		//rb.velocity += (transform.forward * speed);

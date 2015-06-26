@@ -24,6 +24,6 @@ public class SmoothFollow : MonoBehaviour {
 			/*transform.LookAt(target.position, target.up);*/
 		}
 
-		transform.position = Vector3.SmoothDamp(transform.position, target.position - target.forward * distance, ref velocity, smoothPositionTime);
+		transform.position = Vector3.SmoothDamp(transform.position + transform.up * 0.5F, target.position - target.forward * distance, ref velocity, smoothPositionTime);
 	}
 }
