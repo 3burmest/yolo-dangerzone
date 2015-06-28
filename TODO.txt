@@ -1,11 +1,13 @@
 -Portal -> Upgradefenster
 -Kampfwelt + Teleport zurück
 -Gegnerische Raumschiffe
--Asteoriden -> Punkten
 -Upgrades (Feuerrate, Raketen, Geschwindigkeit, Nitro, ...)
 -Turrets (random böllern)
 -Hauptmenü + Pause
+-Sound
+
+Fertige Aufgaben:
+-Wegpunkte
 -UI + Lebenspunkte + Schild
 -Kollision Asteorid <-> Schiff
--Wegpunkte
--Sound
+-Asteoriden -> Punkten
