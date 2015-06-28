@@ -5,7 +5,7 @@ public class Powerup : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<Renderer> ().material.color = Color.green;
+		GetComponent<Renderer> ().material.color = Color.yellow;
 		gameObject.tag = "Powerup";
 	}
 	

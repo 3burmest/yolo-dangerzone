@@ -14,13 +14,13 @@ public class AsteroidDestruction : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
-		Debug.Log (other.tag);
+
 		if (other.tag == "Bullet" || other.tag == "Asteroid" || other.tag == "Player")
 		{
 
 			if (other.tag == "Player") {
-				HealthAndShield health = other.GetComponent<HealthAndShield>();
-				health.dealDamage(75);
+				StatsScript stats = other.GetComponent<StatsScript>();
+				stats.dealDamage(75);
 				HP = 0;
 			}
 			else
@@ -33,7 +33,7 @@ public class AsteroidDestruction : MonoBehaviour {
 			if (HP <= 0 || other.tag == "Asteroid") {
 				if (explosion != null && Time.fixedTime > 1)
 				{
-					if(transform.lossyScale.magnitude > 20){
+					if(transform.lossyScale.magnitude > 20 && transform.GetChild(0).tag != "Powerup"){
 						// Split to make new Asteroids if size is big enough
 						GameObject a1 = (GameObject) Instantiate(gameObject, transform.position + Random.onUnitSphere * 50, transform.rotation);
 						a1.transform.localScale = Vector3.one * (transform.lossyScale.x / 3.0f);
@@ -44,6 +44,10 @@ public class AsteroidDestruction : MonoBehaviour {
 						a2.GetComponent<Rigidbody>().angularVelocity = (Random.insideUnitSphere * 1) * 5;
 //						Instantiate(gameObject, transform.position, transform.rotation);
 					}
+					else if(transform.GetChild(0).tag == "Powerup"){
+						StatsScript stats = GameObject.FindGameObjectWithTag("Player").GetComponent<StatsScript>();
+						stats.addGold((int) transform.lossyScale.magnitude);
+					}
 			
 					Instantiate(explosion, transform.position, transform.rotation);
 				}
@@ -53,7 +57,7 @@ public class AsteroidDestruction : MonoBehaviour {
 		}
 
 		if (other.tag == "Player") {
-			HealthAndShield health = other.GetComponent<HealthAndShield>();
+			StatsScript health = other.GetComponent<StatsScript>();
 			health.dealDamage(75);
 		}
 

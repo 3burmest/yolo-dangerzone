@@ -68,52 +68,62 @@ public class RocketTargeting : MonoBehaviour {
 		//go through all the objects we care about
 		if(currentTarget != null)
 		{
-			screenpos = Camera.main.WorldToScreenPoint(currentTarget.transform.position);
+//			screenpos = Camera.main.WorldToScreenPoint(currentTarget.transform.position);
+			Vector3 view = Camera.main.WorldToViewportPoint(currentTarget.transform.position);
 //			Debug.Log(screenpos);
 			//if onscreen
-			if(screenpos.z > 0 && screenpos.x < Screen.width && screenpos.x > 0 && screenpos.y < Screen.height && screenpos.y > 0)
+//			if(screenpos.z > 0 && screenpos.x < Screen.width && screenpos.x > 0 && screenpos.y < Screen.height && screenpos.y > 0)
+			if(view.x > 0 && view.x < 1 && view.y > 0 && view.y < 1 && view.z > 0)
 			{
+				screenpos = Camera.main.ViewportToScreenPoint(view);
 
-//				sprite.rectTransform.position = screenpos;
-				//Debug.Log("OnScreen: " + screenpos);
 			}
-//			else{
-//				PlaceOffscreen(screenpos);
-//			}
+			else{
+				float x = Mathf.Clamp01(view.x);
+				float y = Mathf.Clamp01(view.y);
+				if(view.z < 0){
+					currentTarget = null;
+					return;
+				}
+
+				screenpos = Camera.main.ViewportToScreenPoint(new Vector3(x, y, 0));
+			}
+
+
 		}
 		
 	}
 	
-	void PlaceOffscreen(Vector3 screenpos)
+	void PlaceOffscreen(Vector3 sp)
 	{
-		float x = screenpos.x;
-		float y = screenpos.y;
+		float x = sp.x;
+		float y = sp.y;
 		float offset = 10;
-		
-		if(screenpos.z < 0)
+
+		if(sp.z < 0)
 		{
-			screenpos = -screenpos;
+			sp = -sp;
 		}
 		
-		if(screenpos.x > Screen.width)
+		if(sp.x > Screen.width)
 		{
 			x = Screen.width - offset;
 		}
-		if(screenpos.x < 0)
+		if(sp.x < 0)
 		{
 			x = offset;
 		}
 		
-		if(screenpos.y > Screen.height)
+		if(sp.y > Screen.height)
 		{
 			y = Screen.height - offset;
 		}
-		if(screenpos.y < 0)
+		if(sp.y < 0)
 		{
 			y = offset;
 		}
 		
-		sprite.rectTransform.position = new Vector3 (x, y, 0);
+		sp = new Vector3 (1, 1, 0);
 		
 	}
 

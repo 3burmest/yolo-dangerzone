@@ -51,6 +51,7 @@
      <Compile Include="Assets\Asteroiden\Script\Orbit.cs" />
      <Compile Include="Assets\Asteroiden\Script\Powerup.cs" />
      <Compile Include="Assets\BulletScript.cs" />
+     <Compile Include="Assets\CheckPointScript.cs" />
      <Compile Include="Assets\Deform.cs" />
      <Compile Include="Assets\Done\Done_Scripts\Done_BGScroller.cs" />
      <Compile Include="Assets\Done\Done_Scripts\Done_DestroyByBoundary.cs" />
@@ -65,7 +66,6 @@
      <Compile Include="Assets\FirePrimary.cs" />
      <Compile Include="Assets\FlyCam.cs" />
      <Compile Include="Assets\GenerateOrbit2.cs" />
-     <Compile Include="Assets\HealthAndShield.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\ExplodeOnEnemy.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\RocketMover.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\RocketMover2.cs" />
@@ -75,12 +75,16 @@
      <Compile Include="Assets\MyTestStuff\MyScripts\SpaceshipControls\SpaceshipControls.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\haartest.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\lifetime.cs" />
+     <Compile Include="Assets\MyTestStuff\Primitives.cs" />
      <Compile Include="Assets\MyTestStuff\RocketTargeting.cs" />
      <Compile Include="Assets\MyTestStuff\TestFire.cs" />
      <Compile Include="Assets\MyTestStuff\WaypointHUD.cs" />
+     <Compile Include="Assets\RaceController.cs" />
      <Compile Include="Assets\ShipControl.cs" />
      <Compile Include="Assets\Shoot.cs" />
      <Compile Include="Assets\SmoothFollow.cs" />
+     <Compile Include="Assets\StatsScript.cs" />
+     <Compile Include="Assets\Waypoint.cs" />
      <Compile Include="Assets\fire.cs" />
      <Compile Include="Assets\lockMouse.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
