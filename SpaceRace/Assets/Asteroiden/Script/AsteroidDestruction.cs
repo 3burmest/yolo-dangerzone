@@ -15,14 +15,23 @@ public class AsteroidDestruction : MonoBehaviour {
 	void OnTriggerEnter (Collider other)
 	{
 		Debug.Log (other.tag);
-		if (other.tag == "Bullet" || other.tag == "Asteroid")
+		if (other.tag == "Bullet" || other.tag == "Asteroid" || other.tag == "Player")
 		{
-			HP -= 35;
 
-			Destroy(other.gameObject);
+			if (other.tag == "Player") {
+				HealthAndShield health = other.GetComponent<HealthAndShield>();
+				health.dealDamage(75);
+				HP = 0;
+			}
+			else
+			{
+				HP -= 35;
+				Destroy(other.gameObject);
+			}
+
 
 			if (HP <= 0 || other.tag == "Asteroid") {
-				if (explosion != null)
+				if (explosion != null && Time.fixedTime > 1)
 				{
 					if(transform.lossyScale.magnitude > 20){
 						// Split to make new Asteroids if size is big enough
@@ -39,9 +48,13 @@ public class AsteroidDestruction : MonoBehaviour {
 					Instantiate(explosion, transform.position, transform.rotation);
 				}
 				
-				
 				Destroy(gameObject);
 			}
+		}
+
+		if (other.tag == "Player") {
+			HealthAndShield health = other.GetComponent<HealthAndShield>();
+			health.dealDamage(75);
 		}
 
 	}

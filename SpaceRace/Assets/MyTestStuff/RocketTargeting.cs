@@ -5,10 +5,6 @@ using UnityEngine.UI;
 public class RocketTargeting : MonoBehaviour {
 
 	GameObject currentTarget;
-
-	public Image OnScreenSprite; 
-	public Image OffScreenSprite;
-
 	public Texture tex;
 
 	public GameObject rocket;
@@ -16,11 +12,12 @@ public class RocketTargeting : MonoBehaviour {
 	Image sprite;
 	Texture instTex;
 	Vector3 screenpos;
+	Camera camera;
 
 	// Use this for initialization
 	void Start () {
-		sprite = (Image) Instantiate (OnScreenSprite, Vector3.zero, Quaternion.identity);
 		instTex = (Texture)Instantiate (tex, Vector3.zero, Quaternion.identity);
+		camera = GetComponent<Camera> ();
 	}
 	
 	// Update is called once per frame
@@ -36,7 +33,16 @@ public class RocketTargeting : MonoBehaviour {
 					continue;
 				}
 
-				float distance = Vector3.Distance (o.transform.position, transform.position);
+				Vector3 Viewpoint = camera.WorldToViewportPoint(o.transform.position);
+				if(Viewpoint.x > 1.0f || Viewpoint.x < 0.0f || Viewpoint.y > 1.0f || Viewpoint.y < 0.0f){
+					continue;
+				}
+
+				// Dichtestes Objekt
+//				float distance = Vector3.Distance (o.transform.position, transform.position);
+
+				// Am dichtesten an Kamera Mitte
+				float distance = Vector2.Distance (new Vector2(Viewpoint.x, Viewpoint.y), Vector2.one * 0.5f);
 
 				if (distance < nearest) {
 					nearest = distance;
@@ -44,7 +50,6 @@ public class RocketTargeting : MonoBehaviour {
 				}
 
 			}
-
 			currentTarget = nearestObject;
 
 			Debug.Log ("Target: " + currentTarget);
@@ -64,12 +69,12 @@ public class RocketTargeting : MonoBehaviour {
 		if(currentTarget != null)
 		{
 			screenpos = Camera.main.WorldToScreenPoint(currentTarget.transform.position);
-			Debug.Log(screenpos);
+//			Debug.Log(screenpos);
 			//if onscreen
 			if(screenpos.z > 0 && screenpos.x < Screen.width && screenpos.x > 0 && screenpos.y < Screen.height && screenpos.y > 0)
 			{
 
-				sprite.rectTransform.position = screenpos;
+//				sprite.rectTransform.position = screenpos;
 				//Debug.Log("OnScreen: " + screenpos);
 			}
 //			else{
