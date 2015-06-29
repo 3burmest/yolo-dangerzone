@@ -5,7 +5,8 @@
 -Turrets (random böllern)
 -Hauptmenü + Pause
 -Sound
--Hauptgeschütz / Kanone / Geschosse
+-Hauptgeschütz / Kanone / Geschosse -> Verbessern
+-Turbo oder Schiff beschleunigen
 
 Fertige Aufgaben:
 -Wegpunkte

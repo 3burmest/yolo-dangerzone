@@ -6,6 +6,7 @@ public class GameControllerScript : MonoBehaviour {
 	public GameObject FirstPersonCamera;
 	public GameObject ThirdPersonCamera;
 	public GameObject CockpitHUDGui;
+	public GameObject PlayerShip;
 
 	bool thirdPersonIsOn = false;
 
@@ -29,6 +30,8 @@ public class GameControllerScript : MonoBehaviour {
 				FirstPersonCamera.SetActive(false);
 				CockpitHUDGui.SetActive(false);
 				ThirdPersonCamera.SetActive(true);
+				ThirdPersonCamera.transform.position = PlayerShip.transform.position;
+				ThirdPersonCamera.transform.rotation = PlayerShip.transform.rotation;
 
 				thirdPersonIsOn = true;
 			}
