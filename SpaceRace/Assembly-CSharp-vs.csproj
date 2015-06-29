@@ -65,6 +65,7 @@
      <Compile Include="Assets\Done\Done_Scripts\Done_WeaponController.cs" />
      <Compile Include="Assets\FirePrimary.cs" />
      <Compile Include="Assets\FlyCam.cs" />
+     <Compile Include="Assets\GameControllerScript.cs" />
      <Compile Include="Assets\GenerateOrbit2.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\ExplodeOnEnemy.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\RocketMover.cs" />

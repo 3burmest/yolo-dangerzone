@@ -14,7 +14,7 @@ public class RocketMover : MonoBehaviour {
 	float launchTime;
 
 	private float colliderDelay = 0.5f;
-	private float timeToStart = 2;
+	private float timeToStart = 0;
 
 	// Use this for initialization
 	void Start () {
