@@ -67,6 +67,8 @@
      <Compile Include="Assets\FlyCam.cs" />
      <Compile Include="Assets\GameControllerScript.cs" />
      <Compile Include="Assets\GenerateOrbit2.cs" />
+     <Compile Include="Assets\LaserBoltScript.cs" />
+     <Compile Include="Assets\LaserGunScript.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\ExplodeOnEnemy.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\RocketMover.cs" />
      <Compile Include="Assets\MyTestStuff\MyScripts\RocketMover2.cs" />
