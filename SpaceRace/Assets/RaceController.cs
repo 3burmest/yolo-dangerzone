@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,8 +15,11 @@ public class RaceController : MonoBehaviour {
 	public GameObject checkpoint;
 	public GameObject center;
 
+	public Text timerText; 
+
 	List<GameObject> generatedCheckpoints;
 	int currentCheckpoint;
+	float startTime;
 
 	// Use this for initialization
 	void Start () {
@@ -40,6 +44,7 @@ public class RaceController : MonoBehaviour {
 		}
 
 		generatedCheckpoints [currentCheckpoint].SetActive (true);
+		startTime = Time.fixedTime;
 	}
 
 	public void nextCheckpoint(){
@@ -56,6 +61,33 @@ public class RaceController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+		float currentTime = Time.fixedTime - startTime;
+		timerText.text = toMinSecMilString (currentTime);
+	}
+
+	string toMinSecMilString(float time){
+		int sec = Mathf.RoundToInt(time - 0.5f);
+		int min = sec / 60;
+		sec %= 60;
+		int mil = (int) ((time % 1) * 1000);
+
+		string minString = "" + min;
+		if (min < 10)
+			minString = "0" + minString;
+
+		string secString = "" + sec;
+		if (sec < 10)
+			secString = "0" + secString;
+
+		string milString = "" + mil;
+		if (mil < 100)
+			milString = "0" + milString;
+		if (mil < 10)
+			milString = "0" + milString;
+
+		string timeString = minString + ":" + secString + "." + milString;
+		return timeString;
+
 	}
 }

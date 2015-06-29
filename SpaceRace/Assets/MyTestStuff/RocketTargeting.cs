@@ -14,15 +14,39 @@ public class RocketTargeting : MonoBehaviour {
 	Vector3 screenpos;
 	Camera camera;
 
+	public GameObject[] RocketSlots;
+
+	public void addRocket(){
+		if (missingRockets() == 0)
+			return;
+
+		foreach (GameObject o in RocketSlots) {
+			if(o.transform.childCount == 0){
+				GameObject go = (GameObject) Instantiate(rocket, o.transform.position, o.transform.rotation);
+				go.transform.parent = o.transform;
+				break;
+			}
+		}
+	}
+
+	public int missingRockets(){
+		int count = 0;
+		foreach (GameObject o in RocketSlots)
+			if (o.transform.childCount > 0)
+				count++;
+		return RocketSlots.Length - count;
+	}
+
 	// Use this for initialization
 	void Start () {
 		instTex = (Texture)Instantiate (tex, Vector3.zero, Quaternion.identity);
-		camera = GetComponent<Camera> ();
+		camera = Camera.main;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+
 		if (Input.GetKeyDown (KeyCode.R)) {
 
 			float nearest = Mathf.Infinity;
@@ -50,13 +74,29 @@ public class RocketTargeting : MonoBehaviour {
 				}
 
 			}
-			currentTarget = nearestObject;
-
-			Debug.Log ("Target: " + currentTarget);
+			if(nearestObject == currentTarget){
+				currentTarget = null;
+			}
+			else{
+				currentTarget = nearestObject;
+			}
 
 		} else if (Input.GetKeyDown (KeyCode.F) && currentTarget != null) {
-			GameObject go = (GameObject) Instantiate(rocket, transform.position, transform.rotation);
-			go.GetComponent<RocketMover>().target = currentTarget;
+//			GameObject go = (GameObject) Instantiate(rocket, transform.position, transform.rotation);
+//			go.GetComponent<RocketMover>().target = currentTarget;
+
+			foreach(GameObject g in RocketSlots){
+				GameObject go = null;
+				if(g.transform.childCount > 0)
+					go = g.transform.GetChild(0).gameObject;
+				if(go != null){
+					go.GetComponent<RocketMover>().target = currentTarget;
+					go.GetComponent<RocketMover>().launch();
+					go.transform.parent = null;
+					break;
+				}
+			}
+
 		}
 
 		PlaceIndicators();

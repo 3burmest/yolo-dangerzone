@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RaceController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SmoothFollow.cs">
     <Files>
-      <File FileName="Assets\MyTestStuff\RocketTargeting.cs" Line="8" Column="2" />
+      <File FileName="Assets\SmoothFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyTestStuff\RocketTargeting.cs" Line="1" Column="1" />
       <File FileName="Assets\BulletScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets\Asteroiden\Script\GenerateOrbit.cs" Line="79" Column="46" />
+      <File FileName="Assets\Asteroiden\Script\GenerateOrbit.cs" Line="1" Column="1" />
       <File FileName="Assets\Asteroiden\Script\Orbit.cs" Line="1" Column="1" />
       <File FileName="Assets\Asteroiden\Script\Powerup.cs" Line="1" Column="1" />
       <File FileName="Assets\Asteroiden\Script\AsteroidDestruction.cs" Line="1" Column="1" />
@@ -13,9 +14,9 @@
       <File FileName="Assets\ShipControl.cs" Line="1" Column="1" />
       <File FileName="Assets\StatsScript.cs" Line="1" Column="1" />
       <File FileName="Assets\MyTestStuff\Primitives.cs" Line="1" Column="1" />
-      <File FileName="Assets\CheckPointScript.cs" Line="20" Column="24" />
+      <File FileName="Assets\CheckPointScript.cs" Line="1" Column="1" />
       <File FileName="Assets\RaceController.cs" Line="50" Column="45" />
-      <File FileName="Assets\Waypoint.cs" Line="19" Column="22" />
+      <File FileName="Assets\Waypoint.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

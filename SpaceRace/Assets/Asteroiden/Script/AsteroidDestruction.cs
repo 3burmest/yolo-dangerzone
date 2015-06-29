@@ -15,13 +15,20 @@ public class AsteroidDestruction : MonoBehaviour {
 	void OnTriggerEnter (Collider other)
 	{
 
-		if (other.tag == "Bullet" || other.tag == "Asteroid" || other.tag == "Player")
+		if (other.tag == "Bullet" || other.tag == "Asteroid" || other.tag == "Player" || other.tag == "Rocket")
 		{
 
 			if (other.tag == "Player") {
 				StatsScript stats = other.GetComponent<StatsScript>();
 				stats.dealDamage(75);
 				HP = 0;
+			}
+			else if(other.tag == "Rocket")
+			{
+				HP -= 1000;
+				other.transform.parent.GetChild(1).GetComponent<ParticleSystem>().Stop();
+				other.transform.parent.GetChild(1).parent = null;
+				Destroy(other.transform.parent.gameObject);
 			}
 			else
 			{
