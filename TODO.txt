@@ -5,6 +5,7 @@
 -Turrets (random böllern)
 -Hauptmenü + Pause
 -Sound
+-Hauptgeschütz / Kanone / Geschosse
 
 Fertige Aufgaben:
 -Wegpunkte
