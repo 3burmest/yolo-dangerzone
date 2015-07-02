@@ -23,6 +23,10 @@ public class StatsScript : MonoBehaviour {
 	float shield;
 	float gold;
 
+	void Awake() {
+		DontDestroyOnLoad(gameObject);
+	}
+
 	// Use this for initialization
 	void Start () {
 

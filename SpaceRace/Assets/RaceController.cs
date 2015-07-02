@@ -14,6 +14,7 @@ public class RaceController : MonoBehaviour {
 
 	public GameObject checkpoint;
 	public GameObject center;
+	public GameObject portal;
 
 	public Text timerText; 
 
@@ -29,7 +30,7 @@ public class RaceController : MonoBehaviour {
 
 	void createCheckpoints(){
 		currentCheckpoint = 0;
-		for (int i = 0; i < numberOfCheckpoints; i++) {
+		for (int i = 0; i <= numberOfCheckpoints; i++) {
 			
 			float pos = (firstCheckpointRadians - distanceBetweenCheckpoints * i) * Mathf.Deg2Rad;
 			pos = pos > 2 * Mathf.PI ? pos - 2 * Mathf.PI : pos;
@@ -38,7 +39,13 @@ public class RaceController : MonoBehaviour {
 			Debug.Log(radius);
 			Vector3 location = center.transform.position + new Vector3 (Mathf.Sin(pos) * radius, 0, Mathf.Cos(pos) * radius);
 
-			GameObject a = (GameObject) Instantiate(checkpoint, location, checkpoint.transform.rotation);
+			GameObject a;
+
+			if(i == numberOfCheckpoints){
+				a = (GameObject) Instantiate(portal, location, checkpoint.transform.rotation);
+			} else {
+				a = (GameObject) Instantiate(checkpoint, location, checkpoint.transform.rotation);
+			}
 //			a.SetActive(false);
 			generatedCheckpoints.Add(a);
 		}
