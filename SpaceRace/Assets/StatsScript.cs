@@ -10,18 +10,26 @@ public class StatsScript : MonoBehaviour {
 
 	public float maxHealth;
 	public float maxShield;
+	public float maxNitro;
 
 	public Slider healthSlider;
 	public Slider shieldSlider;
+	public Slider nitroSlider;
 
 	public float shieldRechargeDelay;
 	public float shieldRechargeSpeed;
+	public float nitroRechargeSpeed;
+
+	public int nitroSpeed = 350;
 
 	float lastDamageTime = 0;
 
 	float health;
 	float shield;
 	float gold;
+	float nitro;
+
+	bool nitroUsed = false;
 
 	void Awake() {
 		DontDestroyOnLoad(gameObject);
@@ -32,9 +40,11 @@ public class StatsScript : MonoBehaviour {
 
 		health = maxHealth;
 		shield = maxShield;
+		nitro = maxNitro;
 
 		healthSlider.maxValue = maxHealth;
 		shieldSlider.maxValue = maxShield;
+		nitroSlider.maxValue = maxNitro;
 
 		gold = 0;
 	}
@@ -66,8 +76,20 @@ public class StatsScript : MonoBehaviour {
 	
 		healthSlider.value = health;
 		shieldSlider.value = shield;
+		nitroSlider.value = nitro;
 
 		goldText.text = "" + gold;
 //		goldText.text = "Hallo";
+
+		if (Input.GetKeyDown(KeyCode.LeftAlt) && !nitroUsed && nitro >= maxNitro) {
+			gameObject.GetComponent<ShipControl>().speed = nitroSpeed;
+			nitroUsed = true;
+		} else if (nitroUsed && nitro > 0) {
+			nitro -= 1.0F;
+		} else if (nitro < maxNitro) {
+			gameObject.GetComponent<ShipControl>().speed = 50;
+			nitroUsed = false;
+			nitro += nitroRechargeSpeed;
+		}
 	}
 }

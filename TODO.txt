@@ -6,10 +6,10 @@
 -Hauptmenü + Pause
 -Sound
 -Hauptgeschütz / Kanone / Geschosse -> Verbessern
--Turbo oder Schiff beschleunigen
 
 Fertige Aufgaben:
 -Wegpunkte
 -UI + Lebenspunkte + Schild
 -Kollision Asteorid <-> Schiff
 -Asteoriden -> Punkten
+-Turbo oder Schiff beschleunigen / Nitro

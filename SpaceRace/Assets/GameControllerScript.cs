@@ -51,7 +51,6 @@ public class GameControllerScript : MonoBehaviour {
 				Time.timeScale = 0.0F;
 
 				Button continueButton = PauseMenu.transform.GetChild(0).GetComponent<Button>();
-				continueButton.interactable = false;
 				continueButton.interactable = true;
 				Debug.Log(continueButton.IsInteractable());
 				/*continueButton.onClick.AddListener(() => ContinueButtonClick());*/
