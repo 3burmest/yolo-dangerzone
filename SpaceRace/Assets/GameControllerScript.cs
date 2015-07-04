@@ -41,25 +41,20 @@ public class GameControllerScript : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown("p")) {
-			if(pauseMenu) {
+			PauseContinue();
+		}
+	}
+
+	public void PauseContinue() {
+		if(pauseMenu) {
 				PauseMenu.SetActive(false);
 				Time.timeScale = 1.0F;
-
 				pauseMenu = false;
 			} else {
 				PauseMenu.SetActive(true);
 				Time.timeScale = 0.0F;
-
-				Button continueButton = PauseMenu.transform.GetChild(0).GetComponent<Button>();
-				continueButton.interactable = true;
-				Debug.Log(continueButton.IsInteractable());
-				/*continueButton.onClick.AddListener(() => ContinueButtonClick());*/
-
-
 				pauseMenu = true;
 			}
-
-		}
 	}
 
 	public void ContinueButtonClick() {
