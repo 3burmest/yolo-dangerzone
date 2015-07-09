@@ -17,6 +17,7 @@ public class SmoothFollow : MonoBehaviour {
 	void FixedUpdate () {
 		if(Input.GetKey(KeyCode.LeftShift)) {
 			//Nach hinten gucken
+			transform.rotation = Quaternion.LookRotation(-target.forward, target.up);
 		} else {
 			//Finde ich sieht besser aus
 			transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, followRotationSpeed);
