@@ -14,8 +14,10 @@ public class PortalCollision : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter(Collision c) {
-		Application.LoadLevel(scene);
-		Debug.Log("Neue Scene laden");
+	void OnTriggerEnter(Collider c) {
+		if (c.tag == "Player") {
+			Application.LoadLevel(scene);
+			Debug.Log("Neue Scene laden");
+		}
 	}
 }

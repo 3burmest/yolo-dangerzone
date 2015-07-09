@@ -7,6 +7,7 @@ public class RaceController : MonoBehaviour {
 
 	public int numberOfCheckpoints;
 	public int distanceBetweenCheckpoints;
+	public float spread;
 	public float distanceFromPlanet;
 
 	[Range(0.0f, 360.0f)]
@@ -38,6 +39,8 @@ public class RaceController : MonoBehaviour {
 			float radius = distanceFromPlanet;
 			Debug.Log(radius);
 			Vector3 location = center.transform.position + new Vector3 (Mathf.Sin(pos) * radius, 0, Mathf.Cos(pos) * radius);
+			location += Random.insideUnitSphere * spread;
+
 
 			GameObject a;
 
@@ -46,7 +49,7 @@ public class RaceController : MonoBehaviour {
 			} else {
 				a = (GameObject) Instantiate(checkpoint, location, checkpoint.transform.rotation);
 			}
-//			a.SetActive(false);
+			a.SetActive(false);
 			generatedCheckpoints.Add(a);
 		}
 
@@ -58,7 +61,7 @@ public class RaceController : MonoBehaviour {
 		generatedCheckpoints [currentCheckpoint++].SetActive (false);
 
 		if (currentCheckpoint == numberOfCheckpoints) {
-			//TODO Portal Spawnen als letzten Checkpoint!
+			generatedCheckpoints [currentCheckpoint].SetActive (true);
 			Debug.Log("Alle Checkpoints abgefahren");
 		} else {
 			generatedCheckpoints [currentCheckpoint].SetActive (true);
