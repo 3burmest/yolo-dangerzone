@@ -37,7 +37,6 @@ public class RaceController : MonoBehaviour {
 			pos = pos > 2 * Mathf.PI ? pos - 2 * Mathf.PI : pos;
 
 			float radius = distanceFromPlanet;
-			Debug.Log(radius);
 			Vector3 location = center.transform.position + new Vector3 (Mathf.Sin(pos) * radius, 0, Mathf.Cos(pos) * radius);
 			location += Random.insideUnitSphere * spread;
 

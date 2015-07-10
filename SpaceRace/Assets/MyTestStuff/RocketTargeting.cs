@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Linq;
 
 public class RocketTargeting : MonoBehaviour {
 
@@ -52,7 +53,7 @@ public class RocketTargeting : MonoBehaviour {
 			float nearest = Mathf.Infinity;
 			GameObject nearestObject = null;
 
-			foreach (GameObject o in GameObject.FindGameObjectsWithTag("Powerup")) {
+			foreach (GameObject o in GameObject.FindGameObjectsWithTag("Powerup").Concat(GameObject.FindGameObjectsWithTag("Enemy"))) {
 				if (o.GetComponent<Renderer> () == null || !o.GetComponent<Renderer> ().isVisible) {
 					continue;
 				}
