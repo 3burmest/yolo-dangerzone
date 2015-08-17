@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Programme/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Programme/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -72,19 +72,21 @@
      <Compile Include="Assets\GunTarget.cs" />
      <Compile Include="Assets\LaserBoltScript.cs" />
      <Compile Include="Assets\LaserGunScript.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\ExplodeOnEnemy.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\RocketMover.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\RocketMover2.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\SpaceDust.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\SpaceshipControls\Controls3.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\SpaceshipControls\SpaceshipConstrols2.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\SpaceshipControls\SpaceshipControls.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\haartest.cs" />
-     <Compile Include="Assets\MyTestStuff\MyScripts\lifetime.cs" />
-     <Compile Include="Assets\MyTestStuff\Primitives.cs" />
-     <Compile Include="Assets\MyTestStuff\RocketTargeting.cs" />
-     <Compile Include="Assets\MyTestStuff\TestFire.cs" />
-     <Compile Include="Assets\MyTestStuff\WaypointHUD.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\ExplodeOnEnemy.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\Primitives.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\RocketMover.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\RocketMover2.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\RocketTargeting.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\SpaceDust.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\SpaceshipControls\Controls3.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\SpaceshipControls\SpaceshipConstrols2.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\SpaceshipControls\SpaceshipControls.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\TestFire.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\TurretScripts\TurretGunScript.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\TurretScripts\TurretTopScript.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\WaypointHUD.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\haartest.cs" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\lifetime.cs" />
      <Compile Include="Assets\PortalCollision.cs" />
      <Compile Include="Assets\RaceController.cs" />
      <Compile Include="Assets\SeeBackwards.cs" />
@@ -162,10 +164,10 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Programme/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>C:/Programme/Unity5/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
