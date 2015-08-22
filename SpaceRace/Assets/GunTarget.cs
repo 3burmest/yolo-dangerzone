@@ -26,9 +26,9 @@ public class GunTarget : MonoBehaviour {
 		float newX = Mathf.Clamp (targetVector.x, center.x - center.x * boundarySize, center.x + center.x * boundarySize);
 		float newY = Mathf.Clamp (targetVector.y, center.y - center.y * boundarySize, center.y + center.y * boundarySize);
 
-		targetVector = new Vector3 (newX, newY, 0);
+		//targetVector = new Vector3 (newX, newY, 0);
 
-		Debug.Log (targetVector);
+//		Debug.Log (targetVector);
 		Ray ray = Camera.main.ScreenPointToRay(targetVector);
 //		ray.origin = origin.transform.position;
 		Debug.DrawRay (ray.origin, ray.direction * distance, Color.yellow);
