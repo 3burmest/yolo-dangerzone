@@ -62,11 +62,5 @@ public class AsteroidDestruction : MonoBehaviour {
 				Destroy(gameObject);
 			}
 		}
-
-		if (other.tag == "Player") {
-			StatsScript health = other.GetComponent<StatsScript>();
-			health.dealDamage(75);
-		}
-
 	}
 }

@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MyTestStuff\MyScripts\CameraFollow1.js" />
+     <Compile Include="Assets\MainPrefabs\MainScripts\CameraFollow1.js" />
      <Compile Include="Assets\crosshair.js" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

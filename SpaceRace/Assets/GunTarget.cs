@@ -32,7 +32,6 @@ public class GunTarget : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(targetVector);
 //		ray.origin = origin.transform.position;
 		Debug.DrawRay (ray.origin, ray.direction * distance, Color.yellow);
-		Debug.DrawLine (ray.origin, ray.origin + ray.direction * distance);
 		transform.position = ray.origin + ray.direction * distance;
 	}
 

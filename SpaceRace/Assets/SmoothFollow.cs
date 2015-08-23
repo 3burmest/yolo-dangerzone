@@ -18,13 +18,13 @@ public class SmoothFollow : MonoBehaviour {
 		if(Input.GetKey(KeyCode.LeftShift)) {
 			//Nach hinten gucken
 			transform.rotation = Quaternion.LookRotation(-target.forward, target.up);
+			transform.position = Vector3.SmoothDamp(transform.position + transform.up * 0.5F, target.position - target.forward * -3*distance, ref velocity, smoothPositionTime);
 		} else {
 			//Finde ich sieht besser aus
 			transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, followRotationSpeed);
 			//Wäre eine alternative.. Ist aber miener Meinung nach weniger intuitiv
 			/*transform.LookAt(target.position, target.up);*/
+			transform.position = Vector3.SmoothDamp(transform.position + transform.up * 0.5F, target.position - target.forward * distance, ref velocity, smoothPositionTime);
 		}
-
-		transform.position = Vector3.SmoothDamp(transform.position + transform.up * 0.5F, target.position - target.forward * distance, ref velocity, smoothPositionTime);
 	}
 }
