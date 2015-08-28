@@ -1,0 +1,62 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.1.187496374)
+
+newmtl Hgn_BattleCruiser_Badge_EXPORT
+Kd 0.75 0.75 0.75
+Ks 1 1 1
+Ke 0 0 0
+d 1
+Ns 16
+illum 2
+map_Kd Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiser_badge_export[1].bmp
+map_Ks Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiser_badge_export[1]SPEC.bmp
+
+newmtl Hgn_BattleCruiser_Engine_EXPORT
+Kd 0.75 0.75 0.75
+Ks 1 1 1
+Ke 0 0 0
+d 1
+Ns 16
+illum 2
+map_Kd Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiser_engine_export[1].bmp
+map_Ks Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiser_engine_export[1]SPEC.bmp
+
+newmtl JoinedMaterial_#6
+Kd 0.75 0.75 0.75
+Ks 1 1 1
+Ke 0 0 0
+d 1
+Ns 16
+illum 2
+map_Kd Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiser_main_export[1].bmp
+map_Ks Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiser_main_export[1]SPEC.bmp
+
+newmtl Hgn_BattleCruiser_Thruster_EXPORT
+Kd 0.75 0.75 0.75
+Ks 1 1 1
+Ke 0 0 0
+d 1
+Ns 16
+illum 2
+map_Kd Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiser_thruster_export[1].bmp
+
+newmtl Hgn_BattleCruiserIonBeamTurret_EXPORT
+Kd 0.75 0.75 0.75
+Ks 1 1 1
+Ke 0 0 0
+d 1
+Ns 16
+illum 2
+map_Kd Objects/SPACE/Homeworld2/hgn_battlecruiser/hgn_battlecruiserionbeamturret/Hgn_battlecruiserionbeamturret_export[1].bmp
+map_Ks Objects/SPACE/Homeworld2/hgn_battlecruiser/hgn_battlecruiserionbeamturret/Hgn_battlecruiserionbeamturret_export[1]SPEC.bmp
+
+newmtl Hgn_BattleCruiserKineticBurstCannon_EXPORT
+Kd 0.75 0.75 0.75
+Ks 1 1 1
+Ke 0 0 0
+d 1
+Ns 16
+illum 2
+map_Kd Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiserkineticburstcannon_export[1].bmp
+map_Ks Objects/SPACE/Homeworld2/hgn_battlecruiser/Hgn_battlecruiserkineticburstcannon_export[1]SPEC.bmp
+

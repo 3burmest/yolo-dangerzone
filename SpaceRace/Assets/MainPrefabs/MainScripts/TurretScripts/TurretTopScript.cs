@@ -10,13 +10,13 @@ public class TurretTopScript : MonoBehaviour {
 
 	private GameObject currentTarget;
 
+	private float delta_rotation = 0.0f;
 
-
-	private string targetTag = "DebugTarget";
+	private string targetTag;
 
 	// Use this for initialization
 	void Start () {
-	
+		targetTag = transform.parent.GetComponent<TargetScript> ().target;
 	}
 	
 	// Update is called once per frame
@@ -30,10 +30,15 @@ public class TurretTopScript : MonoBehaviour {
 
 			Quaternion targetRotation = Quaternion.LookRotation (targetVector, transform.up);
 			
-			targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotation_speed * Time.deltaTime);
-			
+			targetRotation = Quaternion.RotateTowards (transform.rotation, targetRotation, rotation_speed * Time.deltaTime);
+
+			float euler1 = transform.localRotation.eulerAngles.y;
+
 			transform.rotation = targetRotation;
 
+			delta_rotation = Mathf.Abs (transform.localRotation.eulerAngles.y - euler1) % 360;
+		} else {
+			transform.localRotation = Quaternion.Euler(0, rotateTowards(transform.eulerAngles.y, 0, rotation_speed), 0);
 		}
 
 		transform.localRotation = Quaternion.Euler(0, transform.localRotation.eulerAngles.y, 0);
@@ -58,8 +63,28 @@ public class TurretTopScript : MonoBehaviour {
 		}
 
 		currentTarget = nearestObject;
+	}
 
+	float rotateTowards(float from, float to, float speed){
+		
+		from = from < 180 ? from + 360 : from;
+		to = to < 180 ? to + 360 : to;
+		
+		float x;
+		
+		float dx = to - from; // Weg zum Ziel
+		float ds = speed * Time.deltaTime * (dx < 0 ? -1 : 1); // Weg der in diesem Aufruf überbrückt werden kann
+		
+		if (Mathf.Abs (dx) > Mathf.Abs (ds)) {
+			x = from + ds;
+		} else {
+			x = to;
+		}
+		
+		return x % 360;
+	}           
 
-
+	public float getDeltaRotation()	{
+		return delta_rotation;
 	}
 }

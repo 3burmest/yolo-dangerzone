@@ -4,20 +4,38 @@ using System.Collections;
 public class TurretGunScript : MonoBehaviour {
 
 	public float rotation_speed;
+	public Transform gunpoint1, gunpoint2;
+	public GameObject laserShot;
+	public float engage_min_angle; // Wie genau die Ausrichtung der Gun sein muss um zu Schießen
+	public float feuerrate;
 
+	// Rotation
 	private float rotation_x;
+	private float delta_rotation = 0;
 
 	private GameObject currentTarget;
 
 	private float max_x = 275;
 	private float min_x = 390;
 
-	
-	private string targetTag = "DebugTarget";
+	// Shooting
+	private int fireStatus = 0;
+	/**
+	 * 0 = idle
+	 * 1 = following
+	 * 2 = firing
+	 */
+
+	private float nextFire = 0f;
+	private int gun = 0; // um abwechselnd zu Schießen
+
+	// Target
+	private string targetTag; 
 
 	// Use this for initialization
 	void Start () {
 		rotation_x = transform.localRotation.eulerAngles.x;
+		targetTag = transform.parent.parent.GetComponent<TargetScript> ().target;
 	}
 	
 	// Update is called once per frame
@@ -31,14 +49,28 @@ public class TurretGunScript : MonoBehaviour {
 			
 			Quaternion targetRotation = Quaternion.LookRotation (targetVector, transform.forward);
 
-			Debug.DrawRay(transform.position, transform.forward * 1000, Color.blue);
+			Debug.DrawRay (transform.position, transform.forward * 1000, Color.blue);
 			
 			transform.rotation = targetRotation;
-			
+
+			float gun_delta_rotation = Mathf.Abs (transform.localRotation.eulerAngles.x - rotation_x);
+			float top_delta_rotation = transform.parent.GetComponent<TurretTopScript> ().getDeltaRotation ();
+
+			delta_rotation = Mathf.Sqrt (Mathf.Pow (gun_delta_rotation, 2) + Mathf.Pow (top_delta_rotation, 2));
+
+			if(fireStatus < 2 && delta_rotation < 0.5f){
+				fireStatus = 2;
+			}
+			else {
+				fireStatus = 1;
+			}
+
+		} else {
+			fireStatus = 0;
+			transform.localRotation = Quaternion.Euler(0, 0, 0);
 		}
 
 		rotation_x = rotateTowards (rotation_x, transform.localRotation.eulerAngles.x, rotation_speed);
-		Debug.Log (rotation_x);
 
 		if (rotation_x > 25 && rotation_x < 280) {
 			if(rotation_x - 25 < 280 - rotation_x){
@@ -50,6 +82,18 @@ public class TurretGunScript : MonoBehaviour {
 		}
 
 		transform.localRotation = Quaternion.Euler (rotation_x, 0, 0);
+
+		if (fireStatus == 2) {
+			if(Time.fixedTime >= nextFire){
+				GameObject clone;
+				if(gun++ % 2 == 0){
+					clone = (GameObject) Instantiate(laserShot, gunpoint1.position, gunpoint1.rotation);
+				}else{
+					clone = (GameObject) Instantiate(laserShot, gunpoint2.position, gunpoint2.rotation);
+				}
+				nextFire = Time.fixedTime + feuerrate;
+			}
+		}
 
 	}
 
