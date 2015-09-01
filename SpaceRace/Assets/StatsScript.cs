@@ -26,7 +26,7 @@ public class StatsScript : MonoBehaviour {
 
 	float health;
 	float shield;
-	float gold;
+	int gold;
 	float nitro;
 
 	bool nitroUsed = false;
@@ -53,6 +53,15 @@ public class StatsScript : MonoBehaviour {
 		gold += g;
 	}
 
+	public int getGold(){
+		return gold;
+	}
+
+	public void removeGold(int g){
+		gold -= g;
+		Update ();
+	}
+
 	public void dealDamage(float damagePoints){
 		lastDamageTime = Time.fixedTime;
 		float newShield = shield - damagePoints;
@@ -68,7 +77,6 @@ public class StatsScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		if (shieldRechargeDelay + lastDamageTime < Time.fixedTime) {
 			float newShield = shield + shieldRechargeSpeed * Time.deltaTime;
 			shield = newShield < maxShield ? newShield : maxShield;

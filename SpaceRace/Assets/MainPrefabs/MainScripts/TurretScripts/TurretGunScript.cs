@@ -8,6 +8,7 @@ public class TurretGunScript : MonoBehaviour {
 	public GameObject laserShot;
 	public float engage_min_angle; // Wie genau die Ausrichtung der Gun sein muss um zu Schießen
 	public float feuerrate;
+	public float spread;
 
 	// Rotation
 	private float rotation_x;
@@ -15,8 +16,8 @@ public class TurretGunScript : MonoBehaviour {
 
 	private GameObject currentTarget;
 
-	private float max_x = 275;
-	private float min_x = 390;
+	private float max_x = 280;
+	private float min_x = 25;
 
 	// Shooting
 	private int fireStatus = 0;
@@ -72,12 +73,12 @@ public class TurretGunScript : MonoBehaviour {
 
 		rotation_x = rotateTowards (rotation_x, transform.localRotation.eulerAngles.x, rotation_speed);
 
-		if (rotation_x > 25 && rotation_x < 280) {
-			if(rotation_x - 25 < 280 - rotation_x){
-				rotation_x = 25;
+		if (rotation_x > min_x && rotation_x < max_x) {
+			if(rotation_x - min_x < max_x - rotation_x){
+				rotation_x = min_x;
 			}
 			else{
-				rotation_x = 280;
+				rotation_x = max_x;
 			}
 		}
 
@@ -86,11 +87,18 @@ public class TurretGunScript : MonoBehaviour {
 		if (fireStatus == 2) {
 			if(Time.fixedTime >= nextFire){
 				GameObject clone;
+
+				float rx = Random.Range(-spread, spread);
+				float ry = Random.Range(-spread, spread);
+				float rz = Random.Range(-spread, spread);
+
 				if(gun++ % 2 == 0){
 					clone = (GameObject) Instantiate(laserShot, gunpoint1.position, gunpoint1.rotation);
 				}else{
 					clone = (GameObject) Instantiate(laserShot, gunpoint2.position, gunpoint2.rotation);
 				}
+
+				clone.transform.Rotate(rx, ry, rz);
 				nextFire = Time.fixedTime + feuerrate;
 			}
 		}

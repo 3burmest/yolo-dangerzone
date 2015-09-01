@@ -92,6 +92,7 @@
      <Compile Include="Assets\SeeBackwards.cs" />
      <Compile Include="Assets\ShipControl.cs" />
      <Compile Include="Assets\Shoot.cs" />
+     <Compile Include="Assets\ShopScript.cs" />
      <Compile Include="Assets\SmoothFollow.cs" />
      <Compile Include="Assets\StatsScript.cs" />
      <Compile Include="Assets\TargetScript.cs" />

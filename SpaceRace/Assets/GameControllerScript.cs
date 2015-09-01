@@ -9,6 +9,7 @@ public class GameControllerScript : MonoBehaviour {
 	public GameObject CockpitHUDGui;
 	public GameObject PlayerShip;
 	public GameObject PauseMenu;
+	public GameObject ShopMenu;
 
 	bool thirdPersonIsOn = false;
 	bool pauseMenu = false;
@@ -48,6 +49,7 @@ public class GameControllerScript : MonoBehaviour {
 	public void PauseContinue() {
 		if(pauseMenu) {
 				PauseMenu.SetActive(false);
+				ShopMenu.SetActive(false);
 				Time.timeScale = 1.0F;
 				pauseMenu = false;
 			} else {
@@ -55,6 +57,16 @@ public class GameControllerScript : MonoBehaviour {
 				Time.timeScale = 0.0F;
 				pauseMenu = true;
 			}
+	}
+
+	public void showShop(){
+		PauseMenu.SetActive (false);
+		ShopMenu.SetActive (true);
+	}
+
+	public void hideShop(){
+		PauseMenu.SetActive (true);
+		ShopMenu.SetActive (false);
 	}
 
 	public void ContinueButtonClick() {

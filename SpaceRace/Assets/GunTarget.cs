@@ -19,6 +19,10 @@ public class GunTarget : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Time.timeScale == 0) {
+			return;
+		}
+
 		Vector3 targetVector = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0);
 
 		Vector2 center = new Vector2 (Screen.width / 2.0f, Screen.height / 2.0f);
@@ -26,7 +30,7 @@ public class GunTarget : MonoBehaviour {
 		float newX = Mathf.Clamp (targetVector.x, center.x - center.x * boundarySize, center.x + center.x * boundarySize);
 		float newY = Mathf.Clamp (targetVector.y, center.y - center.y * boundarySize, center.y + center.y * boundarySize);
 
-		//targetVector = new Vector3 (newX, newY, 0);
+		targetVector = new Vector3 (newX, newY, 0);
 
 //		Debug.Log (targetVector);
 		Ray ray = Camera.main.ScreenPointToRay(targetVector);

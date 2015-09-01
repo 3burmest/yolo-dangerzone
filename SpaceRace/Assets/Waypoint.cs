@@ -16,6 +16,9 @@ public class Waypoint : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Time.timeScale == 0) {
+			return;
+		}
 		PlaceIndicators ();
 	}
 
@@ -77,6 +80,7 @@ public class Waypoint : MonoBehaviour {
 	}
 	
 	void OnGUI() {
+		if(Time.timeScale != 0)
 		GUI.DrawTexture(new Rect(screenpos.x-25, Screen.height-25 - screenpos.y, 50, 50), instTex);
 	}
 }
