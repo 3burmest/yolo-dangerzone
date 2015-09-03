@@ -26,9 +26,9 @@ public class EnemyControl : MonoBehaviour {
 		float relativeSpeed = speed;
 		if((player.transform.position - transform.position).magnitude < closeProxDist){
 			relativeSpeed = closeProxSpeed;
-			Debug.Log("Slow");
+//			Debug.Log("Slow");
 		} else {
-			Debug.Log("Fast");
+//			Debug.Log("Fast");
 		}
 
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);

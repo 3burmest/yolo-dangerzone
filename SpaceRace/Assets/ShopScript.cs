@@ -45,7 +45,7 @@ public class ShopScript : MonoBehaviour {
 		if (player.GetComponent<StatsScript>().getGold() >= FeuerrateKaufPreis) {
 			player.GetComponent<StatsScript>().removeGold(FeuerrateKaufPreis);
 			foreach(GameObject o in GameObject.FindGameObjectsWithTag("PlayerGun")){
-				o.GetComponent<LaserGunScript>().increaseFirerate(0.7f);
+				o.GetComponent<LaserGunScript2>().increaseFirerate(0.7f);
 			}
 		}
 	}

@@ -52,6 +52,8 @@
      <Compile Include="Assets\Asteroiden\Script\Powerup.cs" />
      <Compile Include="Assets\BulletScript.cs" />
      <Compile Include="Assets\CheckPointScript.cs" />
+     <Compile Include="Assets\DamageDealer.cs" />
+     <Compile Include="Assets\DealDamageToPlayer.cs" />
      <Compile Include="Assets\Deform.cs" />
      <Compile Include="Assets\Done\Done_Scripts\Done_BGScroller.cs" />
      <Compile Include="Assets\Done\Done_Scripts\Done_DestroyByBoundary.cs" />
@@ -70,8 +72,10 @@
      <Compile Include="Assets\GameControllerScript.cs" />
      <Compile Include="Assets\GenerateOrbit2.cs" />
      <Compile Include="Assets\GunTarget.cs" />
+     <Compile Include="Assets\Hitpoints.cs" />
      <Compile Include="Assets\LaserBoltScript.cs" />
      <Compile Include="Assets\LaserGunScript.cs" />
+     <Compile Include="Assets\LaserGunScript2.cs" />
      <Compile Include="Assets\MainPrefabs\MainScripts\ExplodeOnEnemy.cs" />
      <Compile Include="Assets\MainPrefabs\MainScripts\Primitives.cs" />
      <Compile Include="Assets\MainPrefabs\MainScripts\RocketMover.cs" />

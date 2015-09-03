@@ -7,14 +7,20 @@ public class AsteroidDestruction : MonoBehaviour {
 	public GameObject explosion;
 	float HP;
 
+	float instantiationTime; // Um schnell folgende Explosionen zu vermeiden
+
 	// Use this for initialization
 	void Start () {
 		HP = maxHP;
+		instantiationTime = Time.fixedTime;
+	}
+
+	void OnDestroy(){ 
+//		Debug.Log ("Destroyed");
 	}
 
 	void OnTriggerEnter (Collider other)
 	{
-
 		if (other.tag == "Bullet" || other.tag == "Asteroid" || other.tag == "Player" || other.tag == "Rocket")
 		{
 
@@ -38,7 +44,7 @@ public class AsteroidDestruction : MonoBehaviour {
 
 
 			if (HP <= 0 || other.tag == "Asteroid") {
-				if (explosion != null && Time.fixedTime > 1)
+				if (explosion != null && Time.fixedTime - instantiationTime > 1)
 				{
 					if(transform.lossyScale.magnitude > 20 && transform.GetChild(0).tag != "Powerup"){
 						// Split to make new Asteroids if size is big enough

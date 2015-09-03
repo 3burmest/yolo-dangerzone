@@ -16,8 +16,8 @@ public class TurretGunScript : MonoBehaviour {
 
 	private GameObject currentTarget;
 
-	private float max_x = 280;
-	private float min_x = 25;
+	private float max_x = 60;
+	private float min_x = 0;
 
 	// Shooting
 	private int fireStatus = 0;
@@ -73,15 +73,24 @@ public class TurretGunScript : MonoBehaviour {
 
 		rotation_x = rotateTowards (rotation_x, transform.localRotation.eulerAngles.x, rotation_speed);
 
-		if (rotation_x > min_x && rotation_x < max_x) {
-			if(rotation_x - min_x < max_x - rotation_x){
+//		if (rotation_x > min_x && rotation_x < max_x) {
+//			if(rotation_x - min_x < max_x - rotation_x){
+//				rotation_x = min_x;
+//			}
+//			else{
+//				rotation_x = max_x;
+//			}
+//		}
+
+		if (rotation_x > max_x) {
+			if(rotation_x - max_x > min_x + 360 - rotation_x){
 				rotation_x = min_x;
-			}
-			else{
+			}else{
 				rotation_x = max_x;
 			}
 		}
 
+//		Debug.Log (rotation_x);
 		transform.localRotation = Quaternion.Euler (rotation_x, 0, 0);
 
 		if (fireStatus == 2) {

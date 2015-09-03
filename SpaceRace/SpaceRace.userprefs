@@ -1,22 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MainPrefabs\MainScripts\TurretScripts\TurretTopScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Waypoint.cs">
     <Files>
-      <File FileName="Assets\MainPrefabs\MainScripts\TurretScripts\TurretGunScript.cs" Line="101" Column="40" />
-      <File FileName="Assets\Done\Done_Scripts\Done_DestroyByContact.cs" Line="1" Column="1" />
-      <File FileName="Assets\LaserBoltScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\MainPrefabs\MainScripts\TurretScripts\TurretTopScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\LaserGunScript.cs" Line="47" Column="4" />
-      <File FileName="Assets\TargetScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\DontDestroy.cs" Line="1" Column="1" />
-      <File FileName="Assets\GameControllerScript.cs" Line="52" Column="5" />
-      <File FileName="Assets\Asteroiden\Script\AsteroidDestruction.cs" Line="1" Column="1" />
-      <File FileName="Assets\GunTarget.cs" Line="1" Column="1" />
-      <File FileName="Assets\MainPrefabs\MainScripts\RocketTargeting.cs" Line="18" Column="34" />
-      <File FileName="Assets\ShipControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Waypoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\StatsScript.cs" Line="79" Column="18" />
-      <File FileName="Assets\ShopScript.cs" Line="48" Column="58" />
+      <File FileName="Assets\LaserGunScript.cs" Line="27" Column="4" />
+      <File FileName="Assets\LaserGunScript2.cs" Line="8" Column="18" />
+      <File FileName="Assets\ShopScript.cs" Line="33" Column="4" />
+      <File FileName="Assets\GunTarget.cs" Line="48" Column="59" />
+      <File FileName="Assets\DealDamageToPlayer.cs" Line="15" Column="3" />
+      <File FileName="Assets\Waypoint.cs" Line="15" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

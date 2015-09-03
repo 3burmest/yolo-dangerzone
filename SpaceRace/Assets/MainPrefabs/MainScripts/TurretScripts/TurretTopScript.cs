@@ -14,6 +14,12 @@ public class TurretTopScript : MonoBehaviour {
 
 	private string targetTag;
 
+	public bool restrictRotation;
+
+	public float beginDegree;
+
+	public float endDegree;
+
 	// Use this for initialization
 	void Start () {
 		targetTag = transform.parent.GetComponent<TargetScript> ().target;
@@ -41,7 +47,24 @@ public class TurretTopScript : MonoBehaviour {
 			transform.localRotation = Quaternion.Euler(0, rotateTowards(transform.eulerAngles.y, 0, rotation_speed), 0);
 		}
 
-		transform.localRotation = Quaternion.Euler(0, transform.localRotation.eulerAngles.y, 0);
+
+
+		if (!restrictRotation) {
+			transform.localRotation = Quaternion.Euler (0, transform.localRotation.eulerAngles.y, 0);
+		} else {
+			float angle = transform.localRotation.eulerAngles.y;
+
+			if(angle < beginDegree && angle > endDegree){
+				if(beginDegree - angle < angle - endDegree){
+					angle = beginDegree;
+				}
+				else{
+					angle = endDegree;
+				}
+			}
+
+			transform.localRotation = Quaternion.Euler (0, angle, 0);
+		}
 
 
 	}
