@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: fb1d713536de279499e0829cad92934d
+timeCreated: 1442257583
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Gun Turret Bottom
+    100002: Gun Turret Front-Bottom
+    100004: Gun Turret Front-Top
+    100006: Gun Turret Left
+    100008: Gun Turret Right
+    100010: Gun Turret Top
+    100012: Gunpoint1
+    100014: Gunpoint1.2
+    100016: Gunpoint1.3
+    100018: Gunpoint1.4
+    100020: Gunpoint1.5
+    100022: Gunpoint1.6
+    100024: Gunpoint2
+    100026: Gunpoint2.2
+    100028: Gunpoint2.3
+    100030: Gunpoint2.4
+    100032: Gunpoint2.5
+    100034: Gunpoint2.6
+    100036: Guns
+    100038: Guns.2
+    100040: Guns.3
+    100042: Guns.4
+    100044: Guns.5
+    100046: Guns.6
+    100048: hgn_battlecruiser.2
+    100050: //RootNode
+    100052: Turret Base
+    100054: Turret Base.2
+    100056: Turret Base.3
+    100058: Turret Base.4
+    100060: Turret Base.5
+    100062: Turret Base.6
+    400000: Gun Turret Bottom
+    400002: Gun Turret Front-Bottom
+    400004: Gun Turret Front-Top
+    400006: Gun Turret Left
+    400008: Gun Turret Right
+    400010: Gun Turret Top
+    400012: Gunpoint1
+    400014: Gunpoint1.2
+    400016: Gunpoint1.3
+    400018: Gunpoint1.4
+    400020: Gunpoint1.5
+    400022: Gunpoint1.6
+    400024: Gunpoint2
+    400026: Gunpoint2.2
+    400028: Gunpoint2.3
+    400030: Gunpoint2.4
+    400032: Gunpoint2.5
+    400034: Gunpoint2.6
+    400036: Guns
+    400038: Guns.2
+    400040: Guns.3
+    400042: Guns.4
+    400044: Guns.5
+    400046: Guns.6
+    400048: hgn_battlecruiser.2
+    400050: //RootNode
+    400052: Turret Base
+    400054: Turret Base.2
+    400056: Turret Base.3
+    400058: Turret Base.4
+    400060: Turret Base.5
+    400062: Turret Base.6
+    2300000: Guns
+    2300002: Guns.2
+    2300004: Guns.3
+    2300006: Guns.4
+    2300008: Guns.5
+    2300010: Guns.6
+    2300012: hgn_battlecruiser.2
+    2300014: Turret Base
+    2300016: Turret Base.2
+    2300018: Turret Base.3
+    2300020: Turret Base.4
+    2300022: Turret Base.5
+    2300024: Turret Base.6
+    3300000: Guns
+    3300002: Guns.2
+    3300004: Guns.3
+    3300006: Guns.4
+    3300008: Guns.5
+    3300010: Guns.6
+    3300012: hgn_battlecruiser.2
+    3300014: Turret Base
+    3300016: Turret Base.2
+    3300018: Turret Base.3
+    3300020: Turret Base.4
+    3300022: Turret Base.5
+    3300024: Turret Base.6
+    4300000: Turret Base
+    4300002: Guns
+    4300004: Turret Base.2
+    4300006: Guns.2
+    4300008: Turret Base.3
+    4300010: Guns.3
+    4300012: Turret Base.4
+    4300014: Guns.4
+    4300016: Turret Base.5
+    4300018: Guns.5
+    4300020: Turret Base.6
+    4300022: Guns.6
+    4300024: hgn_battlecruiser.2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
