@@ -23,4 +23,10 @@ public class ShipControl : MonoBehaviour {
 		//rb.velocity += (transform.forward * speed);
 		rb.velocity = Vector3.SmoothDamp(rb.velocity, transform.forward * speed, ref velocity, smoothTime);
 	}
+
+	void OnLevelWasLoaded(int level) {
+		if (level == 1) {
+			transform.position = new Vector3(0,0,0);
+		}
+	}
 }

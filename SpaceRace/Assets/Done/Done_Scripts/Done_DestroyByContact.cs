@@ -17,7 +17,7 @@ public class Done_DestroyByContact : MonoBehaviour
 	void Start ()
 	{
 		health = maxHealth;
-		GameObject gameControllerObject = GameObject.FindGameObjectWithTag ("GameController");
+		GameObject gameControllerObject = GameObject.FindGameObjectsWithTag ("GameController")[0];
 		if (gameControllerObject != null)
 		{
 			gameController = gameControllerObject.GetComponent <Done_GameController>();

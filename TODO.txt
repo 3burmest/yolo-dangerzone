@@ -1,9 +1,8 @@
--Portal -> Upgradefenster
 -Kampfwelt + Teleport zurück
+	Funktioniert fast. Sieht so aus als brauchen wir eine Startszene um den player behalten zu können. (Im moment sind dann auf einmal 2 player, cameras etc in der scene und das funktioniert nicht besonders gut^^
+
 -Gegnerische Raumschiffe
--Upgrades (Feuerrate, Raketen, Geschwindigkeit, Nitro, ...)
--Turrets (random böllern)
--Hauptmenü + Pause
+-Upgrades: Geschwindigkeit, Nitro
 -Sound
 -Hauptgeschütz / Kanone / Geschosse -> Verbessern
 
@@ -12,4 +11,6 @@ Fertige Aufgaben:
 -UI + Lebenspunkte + Schild
 -Kollision Asteorid <-> Schiff
 -Asteoriden -> Punkten
--Turbo oder Schiff beschleunigen / Nitro
+-Turbo oder Schiff beschleunigen / Nitroi
+-Upgrades: Feuerrate, Raketen
+-Hauptmenü + Pause + Lautstärke
