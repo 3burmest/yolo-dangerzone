@@ -52,10 +52,12 @@ public class GameControllerScript : MonoBehaviour {
 				ShopMenu.SetActive(false);
 				Time.timeScale = 1.0F;
 				pauseMenu = false;
+				Screen.lockCursor = true;
 			} else {
 				PauseMenu.SetActive(true);
 				Time.timeScale = 0.0F;
 				pauseMenu = true;
+				Screen.lockCursor = false;
 			}
 	}
 

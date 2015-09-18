@@ -13,6 +13,10 @@ public class RaceController : MonoBehaviour {
 	[Range(0.0f, 360.0f)]
 	public float firstCheckpointRadians;
 
+	// Zeit Eigenschaften
+	public float startingSeconds;
+	public float secondsGainedPerCheckpoint;
+
 	public GameObject checkpoint;
 	public GameObject center;
 	public GameObject portal;
@@ -21,7 +25,8 @@ public class RaceController : MonoBehaviour {
 
 	List<GameObject> generatedCheckpoints;
 	int currentCheckpoint;
-	float startTime;
+	float lastTime;
+	float timeLeft;
 
 	// Use this for initialization
 	void Start () {
@@ -53,11 +58,13 @@ public class RaceController : MonoBehaviour {
 		}
 
 		generatedCheckpoints [currentCheckpoint].SetActive (true);
-		startTime = Time.fixedTime;
+
+		timeLeft = startingSeconds;
 	}
 
 	public void nextCheckpoint(){
 		generatedCheckpoints [currentCheckpoint++].SetActive (false);
+		timeLeft += secondsGainedPerCheckpoint;
 
 		if (currentCheckpoint == numberOfCheckpoints) {
 			generatedCheckpoints [currentCheckpoint].SetActive (true);
@@ -70,9 +77,10 @@ public class RaceController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		float currentTime = Time.fixedTime - startTime;
-		timerText.text = toMinSecMilString (currentTime);
+		float passedTime = Time.fixedTime - lastTime;
+		lastTime = Time.fixedTime;
+		timeLeft -= passedTime;
+		timerText.text = toMinSecMilString (timeLeft);
 	}
 
 	string toMinSecMilString(float time){

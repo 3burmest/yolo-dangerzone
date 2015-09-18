@@ -46,7 +46,7 @@ public class StatsScript : MonoBehaviour {
 		shieldSlider.maxValue = maxShield;
 		nitroSlider.maxValue = maxNitro;
 
-		gold = 0;
+		gold = 1000;
 	}
 
 	public void addGold(int g){
@@ -60,6 +60,10 @@ public class StatsScript : MonoBehaviour {
 	public void removeGold(int g){
 		gold -= g;
 		Update ();
+	}
+
+	public float missingHealth(){
+		return maxHealth - health;
 	}
 
 	public void dealDamage(float damagePoints){
@@ -81,6 +85,8 @@ public class StatsScript : MonoBehaviour {
 			float newShield = shield + shieldRechargeSpeed * Time.deltaTime;
 			shield = newShield < maxShield ? newShield : maxShield;
 		}
+
+		shieldSlider.maxValue = maxShield;
 	
 		healthSlider.value = health;
 		shieldSlider.value = shield;

@@ -10,6 +10,8 @@ public class GunTarget : MonoBehaviour {
 
 	public bool mouseMovesShip; // Maus bewegt Schiff leicht in Zielrichtung
 
+	public float mouseSpeed = 1.0f;
+
 	// Raumschiff
 	public GameObject origin;
 
@@ -21,6 +23,8 @@ public class GunTarget : MonoBehaviour {
 //		Cursor.visible = false;
 		virtualCursor = new Vector3 (Screen.width / 2.0f, Screen.height / 2.0f, 0);
 		lastCursor = Input.mousePosition;
+		Screen.lockCursor = true;
+//		Cursor.lockState = CursorLockMode.Confined;
 	}
 	
 	// Update is called once per frame
@@ -28,12 +32,17 @@ public class GunTarget : MonoBehaviour {
 		if (Time.timeScale == 0) {
 			return;
 		}
+		
+		float mouseX = Input.GetAxis ("Mouse X");
+		float mouseY = Input.GetAxis ("Mouse Y");
 
 		// Virtual Mouse
-		Vector3 deltaMouse = Input.mousePosition - lastCursor;
+//		Vector3 deltaMouse = Input.mousePosition - lastCursor;
+		Vector3 deltaMouse = new Vector3 (mouseX * mouseSpeed, mouseY * mouseSpeed, 0.0f);
 		Vector3 newVirtualMousePosition = virtualCursor + deltaMouse;
-		lastCursor = Input.mousePosition;
+//		lastCursor = Input.mousePosition;
 		//
+
 
 //		Vector3 targetVector = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0);
 		Vector3 targetVector = newVirtualMousePosition;

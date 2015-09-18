@@ -13,12 +13,19 @@ public class DealDamageToPlayer : MonoBehaviour {
 	
 	void OnCollisionEnter (Collision other)
 	{
+
 		if (other.gameObject.tag == "Player") {
 			StatsScript stats = other.gameObject.GetComponent<StatsScript>();
 			stats.dealDamage(damage + Random.Range(damage - damageSpread, damage + damageSpread));
 			Destroy(gameObject);
 		}
-		                       
+	}
 
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.tag == "Player") {
+			StatsScript stats = other.gameObject.GetComponent<StatsScript>();
+			stats.dealDamage(damage + Random.Range(damage - damageSpread, damage + damageSpread));
+			Destroy(gameObject);
+		}
 	}
 }
