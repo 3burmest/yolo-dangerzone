@@ -1,7 +1,10 @@
 -Kampfwelt + Teleport zurück
 	Funktioniert fast. Sieht so aus als brauchen wir eine Startszene um den player behalten zu können. (Im moment sind dann auf einmal 2 player, cameras etc in der scene und das funktioniert nicht besonders gut^^
 
--Gegnerische Raumschiffe
+-Gegnerische Raumschiffe: Fliegen in die richtige richtung, schießen vorwärts. Was noch nicht funktioniert ist, dass sie auch schaden hinzufügen. Ich hab die grünen laser vom battlecruiser probiert, dabei zerstört sich das enemy ship allerdings selbst.. Sind noch etwas schwer abzuhängen
+
+-Das Gold wird am anfang auf 1000 gesetzt.. Weiß nicht warum oder wo das passiert ist
+
 -Upgrades: Geschwindigkeit, Nitro
 -Sound
 -Hauptgeschütz / Kanone / Geschosse -> Verbessern

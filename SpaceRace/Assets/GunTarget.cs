@@ -23,7 +23,7 @@ public class GunTarget : MonoBehaviour {
 //		Cursor.visible = false;
 		virtualCursor = new Vector3 (Screen.width / 2.0f, Screen.height / 2.0f, 0);
 		lastCursor = Input.mousePosition;
-		Screen.lockCursor = true;
+		Screen.lockCursor = false;
 //		Cursor.lockState = CursorLockMode.Confined;
 	}
 	
