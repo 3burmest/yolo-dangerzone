@@ -1,9 +1,15 @@
--Kampfwelt + Teleport zurück
-	Funktioniert fast. Sieht so aus als brauchen wir eine Startszene um den player behalten zu können. (Im moment sind dann auf einmal 2 player, cameras etc in der scene und das funktioniert nicht besonders gut^^
+-Kampfwelt + Teleport zurück:
+	Funktioniert. Das Skript überprüft, ob schon Player in der Scene sind im Awake. Das heißt wenn man mit dem Player aus der Battlescene zurück in die RaceScene kommt überprüft der Player der von der RaceScene geladen wird ob es schon einen player gibt. Gibt es, also zerstört er sich.
 
 -Gegnerische Raumschiffe: Fliegen in die richtige richtung, schießen vorwärts. Was noch nicht funktioniert ist, dass sie auch schaden hinzufügen. Ich hab die grünen laser vom battlecruiser probiert, dabei zerstört sich das enemy ship allerdings selbst.. Sind noch etwas schwer abzuhängen
 
+-Der Battlecruiser wird im Moment zerstört sobald irgend etwas in seinen collider kommt, du wolltest einbauen dass die Gegner da spawnen oder hab ich das falsch verstanden? Wenn ja muss ich mir das morgen nochmal angucken, auch wenn ich fast keine Zeit hab..
+
+-Das die maus gelockt wird finde ich irgendwie nicht so gut. Ich hab das an einer stelle rausgenommen aber irgendwo anders scheint das nochmal gemacht zu werden.. Ich glaube ich fände es besser wenn dman nicht mit dem fadenkreuz steuern könnte, das stört meines erachtens nach eher, als das es vorteile bringt.
+
 -Das Gold wird am anfang auf 1000 gesetzt.. Weiß nicht warum oder wo das passiert ist
+
+-MainMenu erstellt und Musik hinzugefügt. Wenn du die Musik ändern möchtest, mach das, ich hab nur irgendwas gesucht damit man sehen kann ob der Volume slider funktioniert.
 
 -Upgrades: Geschwindigkeit, Nitro
 -Sound

@@ -11,12 +11,16 @@ public class GameControllerScript : MonoBehaviour {
 	public GameObject PauseMenu;
 	public GameObject ShopMenu;
 
+	public bool startWithPause = false;
+
 	bool thirdPersonIsOn = false;
 	bool pauseMenu = false;
 
 	// Use this for initialization
 	void Start () {
-	
+		if(startWithPause) {
+			PauseContinue();
+		}
 	}
 	
 	// Update is called once per frame

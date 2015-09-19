@@ -81,6 +81,15 @@ public class StatsScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(health <= 0) {
+			var objects = GameObject.FindObjectsOfType<GameObject>();
+			foreach(GameObject o in objects){
+				Destroy(o);
+			}
+			Application.LoadLevel("MainMenu");
+			return;
+		}
+
 		if (shieldRechargeDelay + lastDamageTime < Time.fixedTime) {
 			float newShield = shield + shieldRechargeSpeed * Time.deltaTime;
 			shield = newShield < maxShield ? newShield : maxShield;

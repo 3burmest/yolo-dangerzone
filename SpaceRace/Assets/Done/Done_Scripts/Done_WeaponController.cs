@@ -7,6 +7,7 @@ public class Done_WeaponController : MonoBehaviour
 	public Transform shotSpawn;
 	public float fireRate;
 	public float delay;
+	public int lifetime = 5;
 
 	void Start ()
 	{
@@ -15,7 +16,9 @@ public class Done_WeaponController : MonoBehaviour
 
 	void Fire ()
 	{
-		Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		GameObject clone = Instantiate(shot, shotSpawn.position, shotSpawn.rotation) as GameObject;
 		GetComponent<AudioSource>().Play();
+
+		Destroy(clone, lifetime);
 	}
 }

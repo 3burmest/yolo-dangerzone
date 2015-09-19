@@ -4,7 +4,7 @@ using System.Collections;
 public class TurretTopScript : MonoBehaviour {
 
 	public float rotation_speed; // Drehgeschwindigkeit
-	public float engage_distance; // Angriffsradius
+	public float engage_distance = 200.0f; // Angriffsradius
 
 	private float rotation_y = 0.0f;
 
