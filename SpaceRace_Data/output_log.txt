@@ -1,0 +1,135 @@
+Initialize engine version: 5.0.2f1 (0b02744d4013)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dumx.dll 10.18.13.5582]
+    Renderer: NVIDIA GeForce GTX 970
+    Vendor:   NVIDIA
+    VRAM:     4008 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 NULL=1 RESZ=0 SlowINTZ=0
+Default GameObject Tag: GameController already registered
+ 
+(Filename:  Line: 83)
+
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.030 seconds
+desktop: 1920x1080 60Hz; virtual: 5760x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\Users\Macros\Desktop\Game\SpaceRace_Data\Managed\System.dll (this message is harmless)
+NullReferenceException: Object reference not set to an instance of an object
+  at CreatePortalOnDestroy.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 950 -> priority: 1 
+  Thread -> id: 1ea0 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at CreatePortalOnDestroy.OnDestroy () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 4.773829 ms
+1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at ShipControl.OnLevelWasLoaded (Int32 level) [0x00000] in <filename unknown>:0 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1237.
+Total: 0.375035 ms (FindLiveObjects: 0.046079 ms CreateObjectMapping: 0.017663 ms MarkObjects: 0.262396 ms  DeleteObjects: 0.046335 ms)
+
+Alle Checkpoints abgefahren
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Neue Scene laden
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.092213 ms
+2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Unloading 110 unused Assets to reduce memory usage. Loaded Objects now: 1292.
+Total: 0.494585 ms (FindLiveObjects: 0.050175 ms CreateObjectMapping: 0.022783 ms MarkObjects: 0.353019 ms  DeleteObjects: 0.068095 ms)
+
+0bonus
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Cannot find 'GameController' script
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Cannot find 'GameController' script
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Cannot find 'GameController' script
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Cannot find 'GameController' script
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Cannot find 'GameController' script
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Neue Scene laden
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.836957 ms
+1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at ShipControl.OnLevelWasLoaded (Int32 level) [0x00000] in <filename unknown>:0 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at ShipControl.OnLevelWasLoaded (Int32 level) [0x00000] in <filename unknown>:0 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+
+Unloading 161 unused Assets to reduce memory usage. Loaded Objects now: 1681.
+Total: 0.684535 ms (FindLiveObjects: 0.051711 ms CreateObjectMapping: 0.037119 ms MarkObjects: 0.491001 ms  DeleteObjects: 0.104190 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at RaceController.OnDestroy () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
