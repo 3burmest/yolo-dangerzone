@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		body{
+			width: 800px;
+			margin: auto;
+		}
+
+		p{
+			margin-left: 20px;
+		}
+	</style>
+	<title>SpaceRace</title>
+</head>
+<body>
+	<h1 style="text-align: center;">SpaceRace</h1>
+	
+	<section>
+	<div>
+		<h4>Projekt Team</h4>
+		<ul>
+			<li>Sebastian Rings</li>
+			<li>Frederik Burmester</li>
+		</ul>
+	</div>
+	<div>
+		<h4>Supervision</h4>
+		<ul>
+			<li>Paul Lubos</li>
+		</ul>
+	</div>
+	</section>
+	<section>
+		<h2>Ziel</h2>
+		<p>
+			<!--This project is our submission for the 2015 version of the Gamedevelopment seminar.<br-->
+			Die Aufgabe dieses Projektes war es, ein 3D Weltraumspiel zu entwickeln.<br>
+		</p>
+	</section>
+	<!--section>
+		<h2>Motivation</h2>
+		<p>
+
+		</p>
+	</section-->
+	<section>
+		<h2>Ansatz</h2>
+		<p>
+			Unsere Idee um die Aufgabe zu erfüllen ist SpaceRace. Als inspiration dienten Space Invaders und Pokemon. Zwei spiele die sehr unterschiedlich sind, aber beide großen erfolg hatten/haben.<br>
+			In SpaceRace fliegt der Spieler in seinem Raumschiff durch ein Asteroidenfeld und wird dabei von Gegnerischen Raumschiffen attackiert. Sein Ziel ist es möglichst schnell die Checkpoints abzufliegen und dann ins Portal zu gelangen. Sobald er in das Portal hineinfliegt, wird er in ein Paralleluniversum teleportiert, in dem er eine Reihe von Gegnern besiegen muss, bevor er durch ein nächstes Portal ins nächste Rennen gelangt.
+		</p>
+		<h5>Race Level</h5>
+		<p>
+			Im Race Level kann der Spieler durch das abschießen von Goldasteroiden Gold sammeln. Von diesem Gold kann er sich im Shop Upgrades kaufen. Der Shop ist jederzeit verfügbar.
+		</p>
+		<h5>Battle Level</h5>
+		<p>
+			Im Battle Level muss sich der Spieler gegen die KI behaupten. Er wird dabei von gegnerischen Raumschiffen angegriffen, die von ihrem Mutterschiff aus starten. Hat der Spieler alle gegnerischen Schiffe vernichtet, muss er das Mutterschiff zerstören um zum nächsten Portal zu gelangen.
+		</p>
+	</section>
+
+	<section>
+		<h2>Umsetzung</h2>
+		<p>
+			Wir verwenden die Spieleengine Unity 3D zur Umsetzung von SpaceRace. Wir haben die unterschiedlichen Spielsituationen in 3 Szenen umgesetzt. Eine Szene für das Hauptmenü, eine Race Szene und eine Battle Szene.
+		</p>
+		<h5>Hauptmenü</h5>
+		<p>
+			Im Hauptmenü gibt es eine Kamera, ein UI Element und eine Audio Quelle. Über das UI Element lässt sich die Lautstärke der Musik und anderer Töne regeln, die unter anderem von der Audio Quelle ausgehen. Außerdem gibt es eine Button, mit dem sich das eigentliche Spiel starten lässt.<br>
+			Wird dieser Button gedrückt wird die Race Szene geladen. Es werden alle Objekte aus der Hauptmenü Szene gelöscht und die Elemente aus der Race Szene geladen.
+		</p>
+		<h5>Race Szene</h5>
+		<p>
+			Beim laden der Race Szene werden Elemente erstellt, die auch nach verlassen der Race Szene noch genutzt werden. Dazu gehört der GameController, das Raumschiff des spielers und dessen Kameras, die Pause- und Shop UI-Elemente und das Head-Up Display, welches sämtliche Informationen zum aktuellen spiel für den Spieler zur verfügung stellt. Für diese Elemente wird die "DontDestroyOnLoad" Methode aufgerufen, damit sie nicht zerstört werden, wenn eine andere Szene aufgerufen wird.<br>
+			Neben diesen Objekten gibt es in der Race Szene einen RaceGameController, der für das Erstellen und Anzeigen der Checkpoints und des Portals zuständig ist und einen Battlecruiser, also das Mutterschiff der gegnerischen Raumschiffe. Am Battlecruiser werden gegnerische Raumschiffe instanziiert und er schießt ebenfalls auf den Spieler.
+		</p>
+		<h5>Battle Szene</h5>
+		<p>
+			In der Battle Szene gibt es einen Battlecruiser, der den Verlauf der Battle Szene steuert. Er instanziiert gegnerische Raumschiffe und kontrolliert wann und wie viele gegnerische Raumschiffe erzeugt werden. Sobald der Battlecruiser zerstört wird, wird ein Portal zurück zur Race Szene instanziiert.
+		</p>
+		<p>
+			Sobald das Leben des Spielers auf null sinkt, gilt er als zerstört, alle Objekte werden zerstört und die Hauptmenü Szene wird geladen.
+		</p>
+	</section>
+</body>
+</html>
