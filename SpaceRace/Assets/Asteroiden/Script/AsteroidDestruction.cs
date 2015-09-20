@@ -59,7 +59,7 @@ public class AsteroidDestruction : MonoBehaviour {
 					}
 					else if(transform.GetChild(0).tag == "Powerup"){
 						StatsScript stats = GameObject.FindGameObjectWithTag("Player").GetComponent<StatsScript>();
-						stats.addGold((int) transform.lossyScale.magnitude);
+						stats.addGold((int) transform.lossyScale.magnitude * 3);
 					}
 			
 					Instantiate(explosion, transform.position, transform.rotation);

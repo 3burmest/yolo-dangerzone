@@ -11,10 +11,17 @@ public class GameControllerScript : MonoBehaviour {
 	public GameObject PauseMenu;
 	public GameObject ShopMenu;
 
+	public GameObject EnemyShield;
+	public GameObject EnemyHP;
+
 	public bool startWithPause = false;
 
 	bool thirdPersonIsOn = false;
 	bool pauseMenu = false;
+
+	int raceNumber = 0;
+	int battleNumber = 0;
+	float timeLeftFromRace = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -78,4 +85,36 @@ public class GameControllerScript : MonoBehaviour {
 	public void ContinueButtonClick() {
 		Debug.Log("Continue");
 	}
+
+	public int getRaceNumber(){
+		return raceNumber++;
+	}
+
+	public int getBattleNumber(){
+		return battleNumber++;
+	}
+
+	public void setTimeLeftFromRace(float t){
+		timeLeftFromRace = t;
+	}
+
+	public int bonusEnemiesKilled(){
+		return (int) timeLeftFromRace / 10;
+	}
+
+	public void hideEnemyBars(){
+		EnemyShield.SetActive (false);
+		EnemyHP.SetActive (false);
+	}
+
+	public Slider getEnemyShieldSlider(){
+		EnemyShield.SetActive (true);
+		return EnemyShield.transform.GetChild(0).GetComponent<Slider>();
+	}
+
+	public Slider getEnemyHPSlider(){
+		EnemyHP.SetActive (true);
+		return EnemyHP.transform.GetChild(0).GetComponent<Slider>();
+	}
+
 }

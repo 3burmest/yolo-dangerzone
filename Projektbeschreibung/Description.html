@@ -48,12 +48,12 @@
 	<section>
 		<h2>Ansatz</h2>
 		<p>
-			Unsere Idee um die Aufgabe zu erfüllen ist SpaceRace. Als inspiration dienten Space Invaders und Pokemon. Zwei spiele die sehr unterschiedlich sind, aber beide großen erfolg hatten/haben.<br>
+			Unsere Idee um die Aufgabe zu erfüllen ist SpaceRace. Als Inspiration dienten Space Invaders und Pokemon. Zwei Spiele die sehr unterschiedlich sind, aber beide großen Erfolg hatten/haben.<br>
 			In SpaceRace fliegt der Spieler in seinem Raumschiff durch ein Asteroidenfeld und wird dabei von Gegnerischen Raumschiffen attackiert. Sein Ziel ist es möglichst schnell die Checkpoints abzufliegen und dann ins Portal zu gelangen. Sobald er in das Portal hineinfliegt, wird er in ein Paralleluniversum teleportiert, in dem er eine Reihe von Gegnern besiegen muss, bevor er durch ein nächstes Portal ins nächste Rennen gelangt.
 		</p>
 		<h5>Race Level</h5>
 		<p>
-			Im Race Level kann der Spieler durch das abschießen von Goldasteroiden Gold sammeln. Von diesem Gold kann er sich im Shop Upgrades kaufen. Der Shop ist jederzeit verfügbar.
+			Im Race Level kann der Spieler durch das Abschießen von Goldasteroiden Gold sammeln. Von diesem Gold kann er sich im Shop Upgrades kaufen. Der Shop ist jederzeit verfügbar. Es Lohnt sich also mal vom Kurs zu weichen um für diese Upgrades zu Spaaren!
 		</p>
 		<h5>Battle Level</h5>
 		<p>
@@ -74,15 +74,47 @@
 		<h5>Race Szene</h5>
 		<p>
 			Beim laden der Race Szene werden Elemente erstellt, die auch nach verlassen der Race Szene noch genutzt werden. Dazu gehört der GameController, das Raumschiff des spielers und dessen Kameras, die Pause- und Shop UI-Elemente und das Head-Up Display, welches sämtliche Informationen zum aktuellen spiel für den Spieler zur verfügung stellt. Für diese Elemente wird die "DontDestroyOnLoad" Methode aufgerufen, damit sie nicht zerstört werden, wenn eine andere Szene aufgerufen wird.<br>
-			Neben diesen Objekten gibt es in der Race Szene einen RaceGameController, der für das Erstellen und Anzeigen der Checkpoints und des Portals zuständig ist und einen Battlecruiser, also das Mutterschiff der gegnerischen Raumschiffe. Am Battlecruiser werden gegnerische Raumschiffe instanziiert und er schießt ebenfalls auf den Spieler.
+			Neben diesen Objekten gibt es in der Race Szene einen RaceGameController, der für das Erstellen und Anzeigen der Checkpoints und des Portals zuständig ist und einen Battlecruiser, also das Mutterschiff der gegnerischen Raumschiffe. Der Battlecruiser ist hier nicht zerstörbar und greift den Spieler aus einer großen Entfernung an. Der Spieler wird dadurch gezwungen nicht zu lange an einer Stelle zu verweilen.<br>
+			Der nächste Checkpoint wird mit einer Flagge auf dem Bildschirm und an dem Bildschirmrand angezeigt.
 		</p>
 		<h5>Battle Szene</h5>
 		<p>
 			In der Battle Szene gibt es einen Battlecruiser, der den Verlauf der Battle Szene steuert. Er instanziiert gegnerische Raumschiffe und kontrolliert wann und wie viele gegnerische Raumschiffe erzeugt werden. Sobald der Battlecruiser zerstört wird, wird ein Portal zurück zur Race Szene instanziiert.
 		</p>
 		<p>
-			Sobald das Leben des Spielers auf null sinkt, gilt er als zerstört, alle Objekte werden zerstört und die Hauptmenü Szene wird geladen.
+			Sobald das Leben des Spielers auf null sinkt oder die Zeit im Rennen abläuft, gilt er als zerstört, alle Objekte werden zerstört und die Hauptmenü Szene wird geladen.
 		</p>
+		<h2>Steuerung</h2>
+		<ul>
+			<li>W, A, S, D, Q, E: Steuerung des Schiffs</li>
+			<li>Maus: Zielen mit Fadenkreuz</li>
+			<li>Linke Maustaste / Leertaste: Feuern</li>
+			<li>Shift Links: Nach hinten gucken</li>
+			<li>Alt Links: Nitro</li>
+			<li>R: Raketenziel aufschalten (Goldene Asteoriden und feindliche Jäger)</li>
+			<li>F: Rakete Abfeuern</li>
+			<li>P: Pause-Menü</li>
+			<ul>
+				<li>Im Pausemenü lässt sich auch Steuerung des Schiffs über die Maus anschalten.</li>
+			</ul>
+			
+		</ul>
+		<h2>Features</h2>
+		<h5>Asteoriden Orbit</h5>
+		<p>
+			In der Race Szene befindet sich ein Planet um den Asteoriden generiert werden. Das Dazugehörige Skript kann für jeden gewünschten Asteoriden Orbit verwendet werden. Es steuert Größe, Menge, Eigen- und Orbitalrotation, Anteil an Gold-Asteoriden und die Größe und Verteilung vom Orbit. Man kann außerdem die Asteoriden in einem Teilkreis generieren, um Leistung zu spaaren.
+		</p>
+		<h5>Lenkrateten</h5>
+		<p>
+			Der Spieler verfügt über 6 Lenkraketen. Mit "R" wird das dichteste Ziel an der Bildschirmmitte aufgeschaltet und kann mir "F" mit einer Rakete beschossen werden. Raketen können auch auf Ziele hinter dem Spieler gefeuert werden.
+		</p>
+		<center><img src="rocket.gif"></center>
+		<h5>Zielausrichtende Waffentürme</h5>
+		<p>
+		Der Battlecruiser verfügt über 6 Waffentürme, die sich zu ihren zugewiesenen Zielen ausrichten können. Die Rotation ist so beschränkt, dass sie jeweils nur einen Bereich abdecken können (insbesondere nicht durchs Schiff schießen können).
+		</p>
+		<center><img src="turretSingle.gif"></center>
+		<center><img src="turretMulti.gif"></center>
 	</section>
 </body>
 </html>

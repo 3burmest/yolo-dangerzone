@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class RaceController : MonoBehaviour {
 
 	public int numberOfCheckpoints;
+	public int numberOfCheckpointsAddedPerRace;
 	public int distanceBetweenCheckpoints;
 	public float spread;
 	public float distanceFromPlanet;
@@ -28,15 +29,24 @@ public class RaceController : MonoBehaviour {
 	float lastTime;
 	float timeLeft;
 
+	void OnDestroy(){
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameControllerScript> ().setTimeLeftFromRace (timeLeft);
+	}
+
 	// Use this for initialization
 	void Start () {
 		generatedCheckpoints = new List<GameObject> ();
-		createCheckpoints ();
+		int raceNumber = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControllerScript>().getRaceNumber();
+		timerText = GameObject.FindGameObjectWithTag ("TimerText").GetComponent<Text> ();
+		createCheckpoints (raceNumber);
+		lastTime = Time.fixedTime;
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameControllerScript> ().hideEnemyBars ();
 	}
 
-	void createCheckpoints(){
+	public void createCheckpoints(int raceNumber){
 		currentCheckpoint = 0;
-		for (int i = 0; i <= numberOfCheckpoints; i++) {
+
+		for (int i = 0; i <= numberOfCheckpoints + numberOfCheckpointsAddedPerRace * raceNumber; i++) {
 			
 			float pos = (firstCheckpointRadians - distanceBetweenCheckpoints * i) * Mathf.Deg2Rad;
 			pos = pos > 2 * Mathf.PI ? pos - 2 * Mathf.PI : pos;
@@ -48,7 +58,7 @@ public class RaceController : MonoBehaviour {
 
 			GameObject a;
 
-			if(i == numberOfCheckpoints){
+			if(i == numberOfCheckpoints + numberOfCheckpointsAddedPerRace * raceNumber){
 				a = (GameObject) Instantiate(portal, location, checkpoint.transform.rotation);
 			} else {
 				a = (GameObject) Instantiate(checkpoint, location, checkpoint.transform.rotation);
@@ -80,6 +90,17 @@ public class RaceController : MonoBehaviour {
 		float passedTime = Time.fixedTime - lastTime;
 		lastTime = Time.fixedTime;
 		timeLeft -= passedTime;
+
+		if(timeLeft <= 0) {
+			var objects = GameObject.FindObjectsOfType<GameObject>();
+			foreach(GameObject o in objects){
+				Destroy(o);
+			}
+			
+			Application.LoadLevel("MainMenu");
+			return;
+		}
+
 		timerText.text = toMinSecMilString (timeLeft);
 	}
 

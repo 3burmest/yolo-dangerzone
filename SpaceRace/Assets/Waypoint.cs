@@ -26,17 +26,20 @@ public class Waypoint : MonoBehaviour {
 	{
 
 		Vector3 view = Camera.main.WorldToViewportPoint(transform.position);
-		//			Debug.Log(screenpos);
 		//if onscreen
 		//			if(screenpos.z > 0 && screenpos.x < Screen.width && screenpos.x > 0 && screenpos.y < Screen.height && screenpos.y > 0)
-		if(view.x > 0 && view.x < 1 && view.y > 0 && view.y < 1 && view.z > 0)
+//		if(view.x > 0 && view.x < 1 && view.y > 0 && view.y < 1 && view.z > 0)
+		if(view.x > 0.05 && view.x < 0.95 && view.y > 0.05 && view.y < 0.95 && view.z > 0)
 		{
 			screenpos = Camera.main.ViewportToScreenPoint(view);
 			
 		}
 		else{
-			float x = Mathf.Clamp01(view.x);
-			float y = Mathf.Clamp01(view.y);
+//			float x = Mathf.Clamp01(view.x);
+//			float y = Mathf.Clamp01(view.y);
+
+			float x = Mathf.Clamp(view.x, 0.05f, 0.95f);
+			float y = Mathf.Clamp(view.y, 0.05f, 0.95f);
 			if(view.z < 0){
 				return;
 			}

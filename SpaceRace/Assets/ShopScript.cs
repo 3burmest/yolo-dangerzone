@@ -46,13 +46,13 @@ public class ShopScript : MonoBehaviour {
 			FeuerrateKaufButton.GetComponent<Button> ().interactable = false;
 		}
 
-		if (player.GetComponent<StatsScript>().missingHealth() >= 1 && player.GetComponent<StatsScript>().getGold() >= LebenKaufPreis) {
+		if (player.GetComponent<StatsScript>().getGold() >= LebenKaufPreis) {
 			LebenKaufButton.GetComponent<Button> ().interactable = true;
 		} else {
 			LebenKaufButton.GetComponent<Button> ().interactable = false;
 		}
 
-		if (player.GetComponent<StatsScript>().getGold() >= LebenRechargeKaufPreis) {
+		if (player.GetComponent<StatsScript>().missingHealth() >= 1 && player.GetComponent<StatsScript>().getGold() >= LebenRechargeKaufPreis) {
 			LebenRechargeKaufButton.GetComponent<Button> ().interactable = true;
 		} else {
 			LebenRechargeKaufButton.GetComponent<Button> ().interactable = false;
@@ -107,15 +107,24 @@ public class ShopScript : MonoBehaviour {
 	}
 
 	public void LebenKauf(){
-
+		if (player.GetComponent<StatsScript>().getGold() >= LebenKaufPreis) {
+			player.GetComponent<StatsScript>().removeGold(LebenKaufPreis);
+			player.GetComponent<StatsScript>().maxHealth += 50; 
+		}
 	}
 
 	public void LebenRechargeKauf(){
-
+		if (player.GetComponent<StatsScript>().getGold() >= LebenRechargeKaufPreis) {
+			player.GetComponent<StatsScript>().removeGold(LebenRechargeKaufPreis);
+			player.GetComponent<StatsScript>().healUp(); 
+		}
 	}
 
 	public void SchildRechargeRateKauf(){
-
+		if (player.GetComponent<StatsScript>().getGold() >= SchildRechargeRateKaufPreis) {
+			player.GetComponent<StatsScript>().removeGold(SchildRechargeRateKaufPreis);
+			player.GetComponent<StatsScript>().shieldRechargeSpeed *= 1.2f; 
+		}
 	}
 
 	public void SchildCapacityKauf(){
@@ -126,14 +135,23 @@ public class ShopScript : MonoBehaviour {
 	}
 
 	public void SchildRechargeDelayKauf(){
-
+		if (player.GetComponent<StatsScript>().getGold() >= SchildRechargeDelayKaufPreis) {
+			player.GetComponent<StatsScript>().removeGold(SchildRechargeDelayKaufPreis);
+			player.GetComponent<StatsScript>().shieldRechargeDelay *= 0.75f; 
+		}
 	}
 
 	public void NitroRechargeRateKauf(){
-
+		if (player.GetComponent<StatsScript>().getGold() >= NitroRechargeRateKaufPreis) {
+			player.GetComponent<StatsScript>().removeGold(NitroRechargeRateKaufPreis);
+			player.GetComponent<StatsScript>().nitroRechargeSpeed *= 1.15f; 
+		}
 	}
 
 	public void NitroCapacityKauf(){
-
+		if (player.GetComponent<StatsScript>().getGold() >= NitroCapacityKaufPreis) {
+			player.GetComponent<StatsScript>().removeGold(NitroCapacityKaufPreis);
+			player.GetComponent<StatsScript>().maxNitro *= 1.15f; 
+		}
 	}
 }

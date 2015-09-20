@@ -46,7 +46,7 @@ public class StatsScript : MonoBehaviour {
 		shieldSlider.maxValue = maxShield;
 		nitroSlider.maxValue = maxNitro;
 
-		gold = 1000;
+		gold = 200;
 	}
 
 	public void addGold(int g){
@@ -64,6 +64,11 @@ public class StatsScript : MonoBehaviour {
 
 	public float missingHealth(){
 		return maxHealth - health;
+	}
+
+	// Füllt alle Leben auf
+	public void healUp(){
+		health = maxHealth;
 	}
 
 	public void dealDamage(float damagePoints){
@@ -86,23 +91,33 @@ public class StatsScript : MonoBehaviour {
 			foreach(GameObject o in objects){
 				Destroy(o);
 			}
+
 			Application.LoadLevel("MainMenu");
 			return;
 		}
+
+
+		goldText.text = "" + gold;
+
+		shieldSlider.maxValue = maxShield;
+		nitroSlider.maxValue = maxNitro;
+		healthSlider.maxValue = maxHealth;
+		
+		healthSlider.value = health;
+		shieldSlider.value = shield;
+		nitroSlider.value = nitro;
+//		goldText.text = "Hallo";
+
+
+	}
+
+	void FixedUpdate(){
 
 		if (shieldRechargeDelay + lastDamageTime < Time.fixedTime) {
 			float newShield = shield + shieldRechargeSpeed * Time.deltaTime;
 			shield = newShield < maxShield ? newShield : maxShield;
 		}
 
-		shieldSlider.maxValue = maxShield;
-	
-		healthSlider.value = health;
-		shieldSlider.value = shield;
-		nitroSlider.value = nitro;
-
-		goldText.text = "" + gold;
-//		goldText.text = "Hallo";
 
 		if (Input.GetKeyDown(KeyCode.LeftAlt) && !nitroUsed && nitro >= maxNitro) {
 			gameObject.GetComponent<ShipControl>().speed = nitroSpeed;
@@ -114,5 +129,6 @@ public class StatsScript : MonoBehaviour {
 			nitroUsed = false;
 			nitro += nitroRechargeSpeed;
 		}
+
 	}
 }

@@ -23,7 +23,7 @@ public class GunTarget : MonoBehaviour {
 //		Cursor.visible = false;
 		virtualCursor = new Vector3 (Screen.width / 2.0f, Screen.height / 2.0f, 0);
 		lastCursor = Input.mousePosition;
-		Screen.lockCursor = false;
+		Screen.lockCursor = true;
 //		Cursor.lockState = CursorLockMode.Confined;
 	}
 	
@@ -54,7 +54,10 @@ public class GunTarget : MonoBehaviour {
 
 		targetVector = new Vector3 (newX, newY, 0);
 		virtualCursor = targetVector;
-		virtualCursor = Vector3.Lerp (virtualCursor, center, 0.01f);
+		if (mouseMovesShip) {
+			virtualCursor = Vector3.Lerp (virtualCursor, center, 0.01f);
+		}
+
 
 //		Debug.Log (targetVector);
 		Ray ray = Camera.main.ScreenPointToRay(targetVector);
@@ -77,6 +80,10 @@ public class GunTarget : MonoBehaviour {
 //			transform.parent.RotateAround(transform.parent.position, transform.parent.up, 20 * Time.deltaTime * logX);
 //			transform.parent.RotateAround(transform.parent.position, transform.parent.right, 20 * Time.deltaTime * logY);
 		}
+	}
+
+	public void toggleMouseMovesShip(){
+		mouseMovesShip = !mouseMovesShip;
 	}
 
 

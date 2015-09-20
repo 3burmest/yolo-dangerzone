@@ -33,15 +33,16 @@ public class ShipControl : MonoBehaviour {
 
 	void OnLevelWasLoaded(int level) {
 		Debug.Log(level);
-		if (level == 1) {
+		if (level == 2) {
 			transform.position = new Vector3(0,0,0);
 			try {
 				transform.LookAt(GameObject.FindWithTag("BattleCruiser").transform);
 				} catch (System.Exception e) {
 					Debug.LogException(e);
 				}
-		} else if (level == 0) {
+		} else if (level == 1) {
 			transform.position = new Vector3(7000.0f,12.7f,0.0f);
+			transform.rotation = Quaternion.Euler(0, 0, 0);
 			try {
 				transform.LookAt(GameObject.FindWithTag("Checkpoint").transform);
 			} catch (System.Exception e) {

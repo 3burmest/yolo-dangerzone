@@ -36,7 +36,7 @@ public class EnemyControl : MonoBehaviour {
 		if(Physics.Raycast(transform.position, fwd, out hit, duckDist)) {
 			if(hit.collider.gameObject != player) {
 				playerDirection = Quaternion.LookRotation(player.transform.up, player.transform.up);
-				print("Ausweichen");
+//				print("Ausweichen");
 			}
 		}
 
