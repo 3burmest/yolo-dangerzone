@@ -1,19 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DontDestroy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LaserGunScript2.cs">
     <Files>
-      <File FileName="Assets\GunTarget.cs" Line="26" Column="28" />
+      <File FileName="Assets\SeeBackwards.cs" Line="13" Column="41" />
+      <File FileName="Assets\GameControllerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\BattleControllerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Asteroiden\Script\AsteroidDestruction.cs" Line="1" Column="1" />
       <File FileName="Assets\CreatePortalOnDestroy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Done\Done_Scripts\Done_DestroyByContact.cs" Line="1" Column="1" />
-      <File FileName="Assets\LaserGunScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\LaserGunScript2.cs" Line="1" Column="1" />
-      <File FileName="Assets\ShopScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\DealDamageToPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Waypoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\GameControllerScript.cs" Line="57" Column="1" />
-      <File FileName="Assets\RaceController.cs" Line="81" Column="29" />
-      <File FileName="Assets\CheckPointScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\DontDestroy.cs" Line="11" Column="1" />
+      <File FileName="Assets\Asteroiden\Script\GenerateOrbit.cs" Line="1" Column="1" />
+      <File FileName="Assets\RaceController.cs" Line="1" Column="1" />
+      <File FileName="Assets\ShipControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\LaserGunScript.cs" Line="33" Column="100" />
+      <File FileName="Assets\LaserGunScript2.cs" Line="9" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

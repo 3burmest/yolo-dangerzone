@@ -50,6 +50,7 @@
      <Compile Include="Assets\Asteroiden\Script\GenerateOrbit.cs" />
      <Compile Include="Assets\Asteroiden\Script\Orbit.cs" />
      <Compile Include="Assets\Asteroiden\Script\Powerup.cs" />
+     <Compile Include="Assets\BattleControllerScript.cs" />
      <Compile Include="Assets\BulletScript.cs" />
      <Compile Include="Assets\CheckPointScript.cs" />
      <Compile Include="Assets\CreatePortalOnDestroy.cs" />
@@ -92,6 +93,7 @@
      <Compile Include="Assets\MainPrefabs\MainScripts\WaypointHUD.cs" />
      <Compile Include="Assets\MainPrefabs\MainScripts\haartest.cs" />
      <Compile Include="Assets\MainPrefabs\MainScripts\lifetime.cs" />
+     <Compile Include="Assets\NoDoubleHUD.cs" />
      <Compile Include="Assets\OnSceneLoad.cs" />
      <Compile Include="Assets\PortalCollision.cs" />
      <Compile Include="Assets\RaceController.cs" />
@@ -100,6 +102,7 @@
      <Compile Include="Assets\Shoot.cs" />
      <Compile Include="Assets\ShopScript.cs" />
      <Compile Include="Assets\SmoothFollow.cs" />
+     <Compile Include="Assets\StartGame.cs" />
      <Compile Include="Assets\StatsScript.cs" />
      <Compile Include="Assets\TargetScript.cs" />
      <Compile Include="Assets\VolumeSlider.cs" />

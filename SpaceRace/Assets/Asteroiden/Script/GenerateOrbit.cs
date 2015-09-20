@@ -91,7 +91,7 @@ public class GenerateOrbit : MonoBehaviour {
 			a.transform.parent = transform;
 
 			//Powerups generieren
-			if(powerupWahrscheinlichkeit >= Random.Range(0, 100)){
+			if(powerupWahrscheinlichkeit > Random.Range(0, 100)){
 				a.transform.GetChild(0).gameObject.AddComponent<Powerup>();
 			}
 			else{
@@ -152,7 +152,7 @@ public class GenerateOrbit : MonoBehaviour {
 			a.transform.parent = transform;
 
 			//Powerups generieren
-			if(0 == Random.Range(0, 100)){
+			if(powerupWahrscheinlichkeit > Random.Range(0, 100)){
 				a.transform.GetChild(0).gameObject.AddComponent<Powerup>();
 			}
 

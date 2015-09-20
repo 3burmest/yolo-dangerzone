@@ -21,7 +21,7 @@ public class AsteroidDestruction : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
-		if (other.tag == "Bullet" || other.tag == "Asteroid" || other.tag == "Player" || other.tag == "Rocket")
+		if (other.tag == "Bullet"|| other.tag == "BulletEnemy" || other.tag == "Asteroid" || other.tag == "Player" || other.tag == "Rocket")
 		{
 
 			if (other.tag == "Player") {

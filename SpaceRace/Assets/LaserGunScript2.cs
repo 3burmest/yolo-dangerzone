@@ -34,8 +34,8 @@ public class LaserGunScript2 : MonoBehaviour {
 //		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown(0)) {
 //			nextFire = Time.fixedTime;
 //		}
-		
-		if (Input.GetKey(KeyCode.Space)|| Input.GetMouseButton(0)) {
+		Debug.Log (!Input.GetKeyDown(KeyCode.LeftShift));
+		if ((Input.GetKey(KeyCode.Space)|| Input.GetMouseButton(0)) && !Input.GetKey(KeyCode.LeftShift)) {
 			if(Time.fixedTime >= nextFire){
 				GameObject clone = (GameObject) Instantiate(bolt, guns[nextGun].transform.position, guns[nextGun].transform.rotation);
 				clone.transform.LookAt(target.transform.position);

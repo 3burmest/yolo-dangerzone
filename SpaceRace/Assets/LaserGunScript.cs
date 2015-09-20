@@ -26,11 +26,11 @@ public class LaserGunScript : MonoBehaviour {
 			return;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown(0) && !Input.GetKeyDown(KeyCode.LeftShift)) {
 			nextFire = Time.fixedTime + initialDelay;
 		}
 
-		if (Input.GetKey(KeyCode.Space)|| Input.GetMouseButton(0)) {
+		if (Input.GetKey(KeyCode.Space)|| Input.GetMouseButton(0) && !Input.GetKeyDown(KeyCode.LeftShift)) {
 			if(Time.fixedTime >= nextFire){
 				GameObject clone = (GameObject) Instantiate(bolt, transform.position, transform.rotation);
 				clone.transform.LookAt(target.transform.position);

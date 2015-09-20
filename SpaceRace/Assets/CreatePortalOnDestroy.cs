@@ -9,7 +9,7 @@ public class CreatePortalOnDestroy : MonoBehaviour {
 
 	void OnCollisionEnter(Collision c) {
 		Debug.Log("Collision motherfuckers");
-		Destroy(gameObject);
+//		Destroy(gameObject);
 	}
 
 	void OnApplicationQuit() {

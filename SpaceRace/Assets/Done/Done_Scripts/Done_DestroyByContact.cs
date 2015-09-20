@@ -43,8 +43,8 @@ public class Done_DestroyByContact : MonoBehaviour
 			Instantiate(explosion, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}
-
-		if (other.tag == "Bullet")
+		Debug.Log (other.name);
+		if (other.tag == "Bullet" && other.name != "LaserGreen")
 		{
 			health -= 15;
 			if(health <= 0){
